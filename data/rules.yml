@@ -21,11 +21,6 @@ rules:
   - intent: sobre_vitalog
   - action: utter_sobre_vitalog
 
-- rule: Verificar interações da lista quando perguntado 
-  steps:
-  - intent: perguntar_sobre_interacao_lista
-  - action: action_verificar_interacoes
-
 - rule: Explicar a função de um remédio quando perguntado
   steps:
   - intent: perguntar_funcao_remedio

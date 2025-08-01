@@ -35,9 +35,9 @@ stories:
   - intent: listar_remedios
   - action: action_listar_remedios
 
-- story: Utilizador tenta verificar com a lista vazia
+- story: Utilizador pergunta a função de um remédio
   steps:
-  - intent: verificar_interacao
-  - action: action_verificar_interacoes
-  - intent: adicionar_remedio
-  - action: utter_pedir_remedio
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: "Claritromicina"
+  - action: action_explicar_remedio

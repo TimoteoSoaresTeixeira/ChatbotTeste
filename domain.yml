@@ -7,11 +7,9 @@ intents:
   - sou_um_bot
   - sobre_vitalog
   - adicionar_remedio
+  - informar_remedio
   - listar_remedios
   - verificar_interacao
-  - informar_remedio # <-- NOVA
-  - afirmacao # <-- ADICIONADA DE VOLTA
-  - negacao # <-- ADICIONADA DE VOLTA
   - perguntar_funcao_remedio
 
 entities:
@@ -27,7 +25,7 @@ slots:
 
 responses:
   utter_saudacao:
-  - text: "Olá! Sou o assistente de medicação do VitaLog. Posso adicionar um remédio à sua lista ou verificar interações."
+  - text: "Olá! Sou o assistente de medicação do VitaLog. Posso adicionar um remédio à sua lista, verificar interações ou explicar para que serve um medicamento."
   utter_despedida:
   - text: "Até logo! Cuide-se bem."
   utter_agradecer:
@@ -39,12 +37,12 @@ responses:
   utter_pedir_remedio:
   - text: "Claro. Qual o nome do medicamento que você quer adicionar?"
   utter_remedio_adicionado:
-  - text: "Ok, adicionei {remedio} à sua lista. Quer adicionar outro ou verificar as interações?"
+  - text: "Ok, adicionei {remedio} à sua lista. Quer adicionar outro, verificar as interações ou saber para que serve algum remédio?"
   utter_lista_vazia:
   - text: "A sua lista de medicamentos está vazia no momento. Quer adicionar um?"
   utter_verificando:
   - text: "Entendido. A verificar a sua lista de medicamentos em busca de possíveis interações..."
-  utter_remedio_nao_encontrado: 
+  utter_remedio_nao_encontrado:
   - text: "Peço desculpa, mas ainda não tenho a explicação para o medicamento '{remedio}' na minha base de dados."
 
 actions:
@@ -53,8 +51,7 @@ actions:
   - action_verificar_interacoes
   - action_resetar_lista
   - action_explicar_remedio
-  - action_explicar_remedi
-   
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
