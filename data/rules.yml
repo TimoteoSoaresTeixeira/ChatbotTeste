@@ -1,0 +1,32 @@
+version: "3.1"
+
+rules:
+- rule: Dizer olá
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+
+- rule: Dizer adeus
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: Responder sobre si mesmo
+  steps:
+  - intent: sou_um_bot
+  - action: utter_sou_um_bot
+
+- rule: Explicar o projeto
+  steps:
+  - intent: sobre_vitalog
+  - action: utter_sobre_vitalog
+
+- rule: Verificar interações da lista quando perguntado 
+  steps:
+  - intent: perguntar_sobre_interacao_lista
+  - action: action_verificar_interacoes
+
+- rule: Explicar a função de um remédio quando perguntado
+  steps:
+  - intent: perguntar_funcao_remedio
+  - action: action_explicar_remedio

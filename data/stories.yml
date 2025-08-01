@@ -1,0 +1,43 @@
+version: "3.1"
+
+stories:
+- story: Utilizador adiciona remédios e verifica interações
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Dipirona"
+  - action: action_adicionar_remedio
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "AAS"
+  - action: action_adicionar_remedio
+  - intent: verificar_interacao
+  - action: action_verificar_interacoes
+  - action: action_resetar_lista
+
+- story: Bot pergunta o nome do remédio
+  steps:
+  - intent: adicionar_remedio
+  - action: utter_pedir_remedio
+  - intent: informar_remedio
+    entities:
+    - remedio: "Ibuprofeno"
+  - action: action_adicionar_remedio
+
+- story: Utilizador adiciona um remédio e depois lista
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Paracetamol"
+  - action: action_adicionar_remedio
+  - intent: listar_remedios
+  - action: action_listar_remedios
+
+- story: Utilizador tenta verificar com a lista vazia
+  steps:
+  - intent: verificar_interacao
+  - action: action_verificar_interacoes
+  - intent: adicionar_remedio
+  - action: utter_pedir_remedio

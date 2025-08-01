@@ -1,0 +1,139 @@
+version: "3.1"
+
+nlu:
+- intent: saudacao
+  examples: |
+    - oi
+    - olá
+    - eae
+    - bom dia
+    - boa tarde
+    - boa noite
+    - opa, tudo bem?
+    - como vai?
+
+- intent: despedida
+  examples: |
+    - tchau
+    - adeus
+    - até mais
+    - fui
+    - até logo
+    - preciso ir
+
+- intent: afirmacao
+  examples: |
+    - sim
+    - isso
+    - pode ser
+    - com certeza
+    - afirmativo
+    - claro
+    - por favor
+    - quero sim
+
+- intent: negacao
+  examples: |
+    - não
+    - de jeito nenhum
+    - não quero
+    - negativo
+    - agora não
+    - não, obrigado
+
+
+- intent: agradecer
+  examples: |
+    - obrigado
+    - obrigada
+    - valeu
+    - muito obrigado
+    - agradecido
+
+- intent: sou_um_robo_da_vitalog
+  examples: |
+    - você é um bot?
+    - você é um robô?
+    - estou falando com um humano?
+    - qual o seu nome?
+    - quem é você?
+
+- intent: verificar_interacao
+  examples: |
+    - pode verificar se posso tomar estes remédios juntos?
+    - estes medicamentos têm interação?
+    - dipirona e paracetamol podem ser tomados ao mesmo tempo?
+    - verificar interação medicamentosa
+    - quero saber se há risco em tomar estes remédios
+
+
+- intent: o_que_voce_faz
+  examples: |
+    - o que você sabe fazer?
+    - como você pode me ajudar?
+    - quais são suas funcionalidades?
+    - o que você faz?
+    - me ajude
+    - ajuda
+
+- intent: sobre_vitalog
+  examples: |
+    - o que é o VitaLog?
+    - me fale sobre este projeto
+
+- intent: adicionar_remedio
+  examples: |
+    - quero adicionar um remédio
+    - adicionar [dipirona](remedio) na minha lista
+    - preciso tomar [paracetamol](remedio)
+    - coloque [aas](remedio) na lista
+    - cadastrar um novo medicamento
+    - quero adicionar [ibuprofeno](remedio)
+    - adicionar [cimegripe](remedio)
+
+- intent: informar_remedio # <-- NOVA INTENÇÃO
+  examples: |
+    - [dipirona](remedio)
+    - [paracetamol](remedio)
+    - o nome é [aas](remedio)
+    - [ibuprofeno](remedio)
+    - [cimegripe](remedio)
+
+
+- intent: listar_remedios
+  examples: |
+    - quais remédios estão na minha lista?
+    - pode me mostrar minha lista de medicamentos?
+    - o que eu preciso tomar?
+    - minha lista
+
+- intent: verificar_interacao
+  examples: |
+    - verificar interações
+    - pode checar se há algum problema com estes remédios?
+    - existe algum risco?
+    - checar os remédios da lista
+
+- intent: perguntar_funcao_remedio
+  examples: |
+    - para que serve [dipirona](remedio)?
+    - o que faz o [paracetamol](remedio)?
+    - me explique sobre [AAS](remedio)
+    - qual a função do [ibuprofeno](remedio)?
+    - [claritromicina](remedio) serve para quê?
+    - o que é [metronidazol](remedio)?
+
+- intent: perguntar_sobre_interacao_lista
+  examples: |
+    - e os remédios da lista, tem interação?
+    - pode verificar a lista para mim?
+    - há algum conflito entre eles?
+    - verifique a lista agora
+    - e agora, há algum problema?
+    - há interação com os remédios da lista?
+
+
+
+#Biblioteca de remedios
+- lookup: remedio
+  file: data/lookup/remedios.yml

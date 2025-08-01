@@ -1,0 +1,60 @@
+version: "3.1"
+
+intents:
+  - saudacao
+  - despedida
+  - agradecer
+  - sou_um_bot
+  - sobre_vitalog
+  - adicionar_remedio
+  - listar_remedios
+  - verificar_interacao
+  - informar_remedio # <-- NOVA
+  - afirmacao # <-- ADICIONADA DE VOLTA
+  - negacao # <-- ADICIONADA DE VOLTA
+  - perguntar_funcao_remedio
+
+entities:
+  - remedio
+
+slots:
+  lista_remedios:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: remedio
+
+responses:
+  utter_saudacao:
+  - text: "Olá! Sou o assistente de medicação do VitaLog. Posso adicionar um remédio à sua lista ou verificar interações."
+  utter_despedida:
+  - text: "Até logo! Cuide-se bem."
+  utter_agradecer:
+  - text: "De nada! Se precisar, estou aqui."
+  utter_sou_um_bot:
+  - text: "Eu sou um assistente virtual do VitaLog, programado para te ajudar a gerir seus medicamentos com segurança."
+  utter_sobre_vitalog:
+  - text: "O VitaLog é uma plataforma para ajudar a garantir que o seu tratamento com medicamentos seja seguro e eficaz, prevenindo interações perigosas e combatendo a falsificação."
+  utter_pedir_remedio:
+  - text: "Claro. Qual o nome do medicamento que você quer adicionar?"
+  utter_remedio_adicionado:
+  - text: "Ok, adicionei {remedio} à sua lista. Quer adicionar outro ou verificar as interações?"
+  utter_lista_vazia:
+  - text: "A sua lista de medicamentos está vazia no momento. Quer adicionar um?"
+  utter_verificando:
+  - text: "Entendido. A verificar a sua lista de medicamentos em busca de possíveis interações..."
+  utter_remedio_nao_encontrado: 
+  - text: "Peço desculpa, mas ainda não tenho a explicação para o medicamento '{remedio}' na minha base de dados."
+
+actions:
+  - action_adicionar_remedio
+  - action_listar_remedios
+  - action_verificar_interacoes
+  - action_resetar_lista
+  - action_explicar_remedio
+  - action_explicar_remedi
+   
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

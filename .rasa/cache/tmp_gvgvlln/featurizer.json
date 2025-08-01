@@ -1,0 +1,59 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "afirmacao": 0,
+        "agendar_consulta": 1,
+        "agradecer": 2,
+        "back": 3,
+        "cancelar_agendamento": 4,
+        "despedida": 5,
+        "informar_especialidade": 6,
+        "negacao": 7,
+        "nlu_fallback": 8,
+        "out_of_scope": 9,
+        "restart": 10,
+        "saudacao": 11,
+        "session_start": 12,
+        "sou_um_bot": 13,
+        "verificar_agendamentos": 14
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_confirmar_especialidade": 13,
+        "utter_agendar_consulta": 14,
+        "utter_agradecer": 15,
+        "utter_ajudar": 16,
+        "utter_cancelar_agendamento": 17,
+        "utter_despedida": 18,
+        "utter_saudacao": 19,
+        "utter_sou_um_bot": 20,
+        "utter_verificar_agendamentos": 21
+      },
+      "entities": {
+        "especialidade": 0
+      },
+      "slots": {
+        "especialidade_0": 0
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}
