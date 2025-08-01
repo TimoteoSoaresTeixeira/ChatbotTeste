@@ -1,7 +1,3 @@
-version: "3.1"
-
-lookup: remedio
-examples: |
   - XAGLUSEF
   - NEOSALDINA MUSCULAR MAX
   - SITAREDDYS
