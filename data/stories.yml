@@ -13,14 +13,13 @@ stories:
     entities:
     - remedio: "AAS"
   - action: action_adicionar_remedio
-  - intent: verificar_interacao
+  - intent: verificar_interacoes
   - action: action_verificar_interacoes
-  - action: action_resetar_lista
 
 - story: Bot pergunta o nome do remédio
   steps:
   - intent: adicionar_remedio
-  - action: utter_pedir_remedio
+  - action: utter_ask_remedio
   - intent: informar_remedio
     entities:
     - remedio: "Ibuprofeno"

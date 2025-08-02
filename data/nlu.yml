@@ -69,6 +69,13 @@ nlu:
     - me informe sobre [dipirona](remedio)
     - o que é [dipirona](remedio)?
 
+- intent: cancelar
+  examples: |
+    - cancelar
+    - deixa pra lá
+    - não quero mais
+    - esquece
+
 - lookup: remedio
   examples: |
     - XAGLUSEF

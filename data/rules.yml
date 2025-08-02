@@ -25,3 +25,8 @@ rules:
   steps:
   - intent: perguntar_funcao_remedio
   - action: action_explicar_remedio
+
+- rule: Lidar com cancelamento
+  steps:
+  - intent: cancelar
+  - action: utter_despedida
