@@ -1,0 +1,683 @@
+- lookup: remedio
+  examples: |
+    - XAGLUSEF
+    - NEOSALDINA MUSCULAR MAX
+    - SITAREDDYS
+    - ÉSTERES ETÍLICOS DE ÁCIDOS GRAXOS ÔMEGA-3
+    - claritromicina
+    - cloridrato de atomoxetina
+    - metronidazol
+    - cloridrato de amiodarona
+    - cloridrato de amantadina
+    - cloridrato de ambroxol
+    - cloridrato de amitriptilina
+    - cloridrato de amorolfina
+    - cloridrato de anagrelida
+    - cloridrato de apomorfina
+    - cloridrato de betaxolol
+    - cloridrato de biperideno
+    - cloridrato de bupivacaína
+    - cloridrato de bupropiona
+    - cloridrato de buspirona
+    - cloridrato de cefepima
+    - cloridrato de ceftazidima
+    - cloridrato de ciclobenzaprina
+    - cloridrato de ciprofloxacino
+    - cloridrato de clindamicina
+    - cloridrato de clomipramina
+    - cloridrato de clonidina
+    - cloridrato de clortalidona
+    - cloridrato de clozapina
+    - cloridrato de dauno-rubicina
+    - cloridrato de dexmedetomidina
+    - cloridrato de diltiazem
+    - cloridrato de dobutamina
+    - cloridrato de donepezila
+    - cloridrato de dopamina
+    - cloridrato de dorzolamida
+    - cloridrato de doxiciclina
+    - cloridrato de doxorrubicina
+    - cloridrato de duloxetina
+    - cloridrato de eflornitina
+    - cloridrato de epirrubicina
+    - cloridrato de esmolol
+    - cloridrato de etambutol
+    - cloridrato de fenilefrina
+    - cloridrato de fenoxazolina
+    - cloridrato de fexofenadina
+    - cloridrato de fluoxetina
+    - cloridrato de formoterol
+    - cloridrato de gencitabina
+    - cloridrato de hidralazina
+    - cloridrato de hidroxizina
+    - cloridrato de idarrubicina
+    - cloridrato de imipramina
+    - cloridrato de irinotecano
+    - cloridrato de isometepteno
+    - cloridrato de lidocaína
+    - cloridrato de loperamida
+    - cloridrato de maprotilina
+    - cloridrato de memantina
+    - cloridrato de metadona
+    - cloridrato de metformina
+    - cloridrato de metilfenidato
+    - cloridrato de metoclopramida
+    - cloridrato de moxifloxacino
+    - cloridrato de naratriptana
+    - cloridrato de nortriptilina
+    - cloridrato de olopatadina
+    - cloridrato de ondansetrona
+    - cloridrato de orfenadrina
+    - cloridrato de oxibutinina
+    - cloridrato de oxicodona
+    - cloridrato de oximetazolina
+    - cloridrato de paroxetina
+    - cloridrato de petidina
+    - cloridrato de pioglitazona
+    - cloridrato de pipotiazina
+    - cloridrato de pramiprexol
+    - cloridrato de prazosina
+    - cloridrato de prometazina
+    - cloridrato de proparacaína
+    - cloridrato de propranolol
+    - cloridrato de protamina
+    - cloridrato de pseudoefedrina
+    - cloridrato de ranitidina
+    - cloridrato de ropivacaína
+    - cloridrato de sevelamer
+    - cloridrato de sotalol
+    - cloridrato de tansulosina
+    - cloridrato de terbinafina
+    - cloridrato de tetraciclina
+    - cloridrato de ticlopidina
+    - cloridrato de tirofibana
+    - cloridrato de tizanidina
+    - cloridrato de topotecano
+    - cloridrato de tramadol
+    - cloridrato de trazodona
+    - cloridrato de trifluoperazina
+    - cloridrato de triexifenidil
+    - cloridrato de valaciclovir
+    - cloridrato de valganciclovir
+    - cloridrato de vancomicina
+    - cloridrato de vardenafila
+    - cloridrato de venlafaxina
+    - cloridrato de verapamil
+    - cloreto de potássio
+    - cloreto de sódio
+    - cloreto de suxametônio
+    - clortalidona
+    - clozapina
+    - coaltar
+    - codeína
+    - colchicina
+    - colecalciferol
+    - colestiramina
+    - colistimetato de sódio
+    - complexo protrombínico
+    - condroitina
+    - cortisona
+    - cromo
+    - crotamitona
+    - dauno-rubicina
+    - deslanosídeo
+    - desloratadina
+    - desmopressina
+    - desogestrel
+    - dexametasona
+    - dexclorfeniramina
+    - dexpantenol
+    - dexrazoxano
+    - dextrano
+    - dextrometorfano
+    - diazepam
+    - diclofenaco
+    - didanosina
+    - dietilestilbestrol
+    - difenidramina
+    - digoxina
+    - diidroergotamina
+    - diltiazem
+    - dimenidrinato
+    - dimeticona
+    - dinoprostona
+    - dipirona
+    - dissulfiram
+    - dobutamina
+    - docetaxel
+    - domperidona
+    - donepezila
+    - dopamina
+    - dorzolamida
+    - doxazosina
+    - doxiciclina
+    - doxorrubicina
+    - droperidol
+    - drospirenona
+    - duloxetina
+    - dutasterida
+    - ebastina
+    - econazol
+    - edetato de cálcio dissódico
+    - efavirenz
+    - eflornitina
+    - enalapril
+    - enoxaparina
+    - entacapona
+    - epinefrina
+    - epirrubicina
+    - epoetina
+    - eptifibatida
+    - ergotamina
+    - eritromicina
+    - escopolamina
+    - esmolol
+    - esomeprazol
+    - espironolactona
+    - estavudina
+    - estearato de eritromicina
+    - estriol
+    - estrogênios conjugados
+    - etambutol
+    - etanercepte
+    - etinilestradiol
+    - etionamida
+    - etoposídeo
+    - etoricoxibe
+    - everolimo
+    - exemestano
+    - famotidina
+    - fanciclovir
+    - fator de von willebrand
+    - fator ix de coagulação
+    - fator vii de coagulação
+    - fator viii de coagulação
+    - felodipino
+    - femprocumona
+    - fenilefrina
+    - fenitoína
+    - fenobarbital
+    - fenofibrato
+    - fenoterol
+    - fenoxazolina
+    - fentanila
+    - fexofenadina
+    - filgrastim
+    - finasterida
+    - fisostigmina
+    - fitomenadiona
+    - fluconazol
+    - flucitosina
+    - fludrocortisona
+    - flumazenil
+    - flunarizina
+    - fluocinonida
+    - fluocinolona
+    - fluoreto de sódio
+    - fluoruracila
+    - fluoxetina
+    - flurbiprofeno
+    - flutamida
+    - fluticasona
+    - fluvastatina
+    - fluvoxamina
+    - fondaparinux
+    - formoterol
+    - fosamprenavir
+    - fosfato de potássio
+    - fosfato de sódio
+    - foscarnet
+    - fosfestrol
+    - fosfomicina
+    - fotemustina
+    - fulvestranto
+    - furosemida
+    - gabapentina
+    - gadobutrol
+    - gadodiamida
+    - gadopentetato de dimeglumina
+    - gadoterato de meglumina
+    - gadoversetamida
+    - galantamina
+    - ganciclovir
+    - ganirelix
+    - gatifloxacino
+    - gefitinibe
+    - gencitabina
+    - genfibrozila
+    - gentamicina
+    - gestodeno
+    - gestrinona
+    - ginkgo biloba
+    - glibenclamida
+    - glicerol
+    - gliclazida
+    - glimepirida
+    - glipizida
+    - glucosamina
+    - gonadotrofina coriônica
+    - gosserrelina
+    - granisetrona
+    - griseofulvina
+    - haloperidol
+    - heparina
+    - hidralazina
+    - hidrato de cloral
+    - hidroclorotiazida
+    - hidrocortisona
+    - hidromorfona
+    - hidroquinona
+    - hidróxido de alumínio
+    - hidróxido de magnésio
+    - hidroxizina
+    - hioscina
+    - hipromelose
+    - homatropina
+    - ibandronato de sódio
+    - ibuprofeno
+    - idarrubicina
+    - ifosfamida
+    - iloprosta
+    - imatinibe
+    - imiglucerase
+    - imipenem
+    - imipramina
+    - imiquimode
+    - imunoglobulina
+    - indapamida
+    - indinavir
+    - indometacina
+    - infliximabe
+    - insulina
+    - interferon
+    - iodo
+    - iopamidol
+    - iopromida
+    - ioversol
+    - ioxaglato de meglumina
+    - ioxitalamato de meglumina
+    - ipratrópio
+    - irbesartana
+    - irinotecano
+    - isoconazol
+    - isoflurano
+    - isoniazida
+    - isossorbida
+    - isotretinoína
+    - isradipino
+    - itraconazol
+    - ivermectina
+    - lamivudina
+    - lamotrigina
+    - lanreotida
+    - lansoprazol
+    - laronidase
+    - latanoprosta
+    - leflunomida
+    - lenograstim
+    - letrozol
+    - leuprorrelina
+    - levobupivacaína
+    - levocetirizina
+    - levodopa
+    - levofloxacino
+    - levomepromazina
+    - levonorgestrel
+    - levotiroxina
+    - lidocaína
+    - lincomicina
+    - linezolida
+    - liotironina
+    - lisinopril
+    - lispro
+    - lítio
+    - lodenafila
+    - loperamida
+    - lopinavir
+    - loratadina
+    - lorazepam
+    - losartana
+    - lovastatina
+    - magnésio
+    - manitol
+    - maprotilina
+    - mebendazol
+    - mecasermina
+    - meclizina
+    - medroxiprogesterona
+    - megestrol
+    - melatonina
+    - melfalano
+    - meloxicam
+    - memantina
+    - menotrofina
+    - meperidina
+    - mepivacaína
+    - mercaptopurina
+    - meropenem
+    - mesalazina
+    - mesilato de doxazosina
+    - mesna
+    - mesterolona
+    - metadona
+    - metaraminol
+    - metformina
+    - metildopa
+    - metilergometrina
+    - metilfenidato
+    - metilprednisolona
+    - metilrosanilínio
+    - metoclopramida
+    - metoprolol
+    - metotrexato
+    - mexiletina
+    - mianserina
+    - miconazol
+    - midazolam
+    - mifepristona
+    - milrinona
+    - minociclina
+    - minoxidil
+    - mirtazapina
+    - misoprostol
+    - mitomicina
+    - mitotano
+    - mivacúrio
+    - moclobemida
+    - modafinila
+    - molgramostim
+    - mometasona
+    - montelucaste
+    - morfina
+    - moxifloxacino
+    - mupirocina
+    - nadroparina
+    - naftidrofurila
+    - nalbufina
+    - naloxona
+    - naltrexona
+    - nandrolona
+    - naproxeno
+    - naratriptana
+    - nateglinida
+    - nefazodona
+    - nelfinavir
+    - neomicina
+    - neostigmina
+    - netilmicina
+    - nevirapina
+    - nicardipino
+    - nicergolina
+    - nicotina
+    - nifedipino
+    - nilutamida
+    - nimodipino
+    - nimesulida
+    - nimorazol
+    - nisoldipino
+    - nitazoxanida
+    - nitrato de prata
+    - nitrendipino
+    - nitrofurantoína
+    - nitroglicerina
+    - nitroprussiato de sódio
+    - nizatidina
+    - noretisterona
+    - norfloxacino
+    - norgestimato
+    - nortriptilina
+    - noscapina
+    - nistatina
+    - octreotida
+    - ofloxacino
+    - olanzapina
+    - olmesartana
+    - olopatadina
+    - omalizumabe
+    - omeprazol
+    - ondansetrona
+    - orfenadrina
+    - orlistate
+    - oseltamivir
+    - oxacilina
+    - oxaliplatina
+    - oxandrolona
+    - oxaprozina
+    - oxazepam
+    - oxcarbazepina
+    - oxibutinina
+    - oxicodona
+    - oximetazolina
+    - oximetolona
+    - oxitetraciclina
+    - oxitocina
+    - paclitaxel
+    - palivizumabe
+    - pamidronato dissódico
+    - pancurônio
+    - pantoprazol
+    - papaverina
+    - paracetamol
+    - paroxetina
+    - pegaspargase
+    - pegfilgrastim
+    - peginterferon
+    - pemetrexede
+    - penicilamina
+    - penicilina
+    - pentamidina
+    - pentoxifilina
+    - perfenazina
+    - pergolida
+    - permetrina
+    - petidina
+    - picossulfato de sódio
+    - pilocarpina
+    - pimecrolimo
+    - pimozida
+    - pindolol
+    - pioglitazona
+    - pipecurônio
+    - piperacilina
+    - pipotiazina
+    - piracetam
+    - pirantel
+    - pirazinamida
+    - piridostigmina
+    - piridoxina
+    - pirimetamina
+    - piroxicam
+    - podofilotoxina
+    - poliestirenossulfonato de cálcio
+    - polimixina b
+    - polivitamínicos
+    - posaconazol
+    - pralidoxima
+    - pramipexol
+    - pramlintida
+    - pravastatina
+    - praziquantel
+    - prazosina
+    - prednisona
+    - prednisolona
+    - prilocaína
+    - primidona
+    - probenecida
+    - probucol
+    - procaína
+    - procarbazina
+    - progesterona
+    - proguanil
+    - prometazina
+    - propafenona
+    - proparacaína
+    - propiltiouracil
+    - propofol
+    - propranolol
+    - protamina
+    - protirrelina
+    - pseudoefedrina
+    - quetiapina
+    - quinidina
+    - quinina
+    - rabeprazol
+    - racecadotrila
+    - raloxifeno
+    - raltitrexede
+    - ramipril
+    - ranitidina
+    - rasburicase
+    - reboxetina
+    - remifentanila
+    - repaglinida
+    - reteplase
+    - ribavirina
+    - rifabutina
+    - rifamicina
+    - rifampicina
+    - riluzol
+    - risedronato de sódio
+    - risperidona
+    - ritonavir
+    - rituximabe
+    - rivastigmina
+    - rizatriptana
+    - rocurônio
+    - rofecoxibe
+    - ropinirol
+    - ropivacaína
+    - rosiglitazona
+    - rosuvastatina
+    - salbutamol
+    - salmeterol
+    - saquinavir
+    - sargramostim
+    - selegilina
+    - sertaconazol
+    - sertralina
+    - sevelamer
+    - sevoflurano
+    - sibutramina
+    - sildenafila
+    - sinvastatina
+    - sirolimo
+    - somatropina
+    - somatostatina
+    - sotalol
+    - spectinomicina
+    - sulbactam
+    - sulfacetamida
+    - sulfadiazina
+    - sulfametoxazol
+    - sulfassalazina
+    - sulpirida
+    - sumatriptana
+    - suxametônio
+    - tacrolimo
+    - tadalafila
+    - tamoxifeno
+    - tansulosina
+    - teicoplanina
+    - telmisartana
+    - temozolomida
+    - tenecteplase
+    - teniposide
+    - tenofovir
+    - tenoxicam
+    - teofilina
+    - terazosina
+    - terbinafina
+    - terbutalina
+    - teriparatida
+    - testosterona
+    - tetracaína
+    - tetraciclina
+    - tiabendazol
+    - tiagabina
+    - tiamina
+    - tianfenicol
+    - tianeptina
+    - tiaprofeno
+    - tibolona
+    - ticlopidina
+    - timolol
+    - tinidazol
+    - tinzaparina
+    - tioconazol
+    - tiopental
+    - tioridazina
+    - tiotepa
+    - tiotrópio
+    - tiroxina
+    - tizanidina
+    - tobramicina
+    - tocilizumabe
+    - tocoferol
+    - tolazamida
+    - tolbutamida
+    - tolcapona
+    - tolmetina
+    - tolterodina
+    - topiramato
+    - topotecano
+    - torasemida
+    - toremifeno
+    - tramadol
+    - trandolapril
+    - tranilcipromina
+    - trastuzumabe
+    - travoprosta
+    - trazodona
+    - tretinoína
+    - triancinolona
+    - triantereno
+    - triazolam
+    - trifluoperazina
+    - triexifenidil
+    - trimetazidina
+    - trimetoprima
+    - triptorrelina
+    - trometamina
+    - tropicamida
+    - tropisetrona
+    - trospium
+    - undecilato de testosterona
+    - uracil
+    - urofolitropina
+    - uroquinase
+    - valaciclovir
+    - valdecoxibe
+    - valganciclovir
+    - valproato de sódio
+    - valsartana
+    - vancomicina
+    - vardenafila
+    - vareniclina
+    - varfarina
+    - vasopressina
+    - vecurônio
+    - venlafaxina
+    - verapamil
+    - verteporfina
+    - vigabatrina
+    - vilazodona
+    - vimblastina
+    - vincristina
+    - vindesina
+    - vinflunina
+    - vinorelbina
+    - voriconazol
+    - zafirlucaste
+    - zaleplona
+    - zanamivir
+    - zidovudina
+    - zileutona
+    - zinco
+    - ziprasidona
+    - zofenopril
+    - zolmitriptana
+    - zolpidem
+    - zonisamida
+    - zopiclona
+    - zotepina
+    - zucapsaicina
