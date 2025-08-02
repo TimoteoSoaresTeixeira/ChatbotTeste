@@ -22,6 +22,8 @@ nlu:
   examples: |
     - você é um robô?
     - quem é você?
+    - você é uma pessoa?
+    - o que é você?
 
 - intent: sobre_vitalog
   examples: |
@@ -31,9 +33,9 @@ nlu:
 - intent: adicionar_remedio
   examples: |
     - quero adicionar um remédio
-    - adicionar [dipirona](remedio) na minha lista
+    - adicionar [dipirona](remedio)
     - preciso tomar [paracetamol](remedio)
-    - coloque [aas](remedio) na lista
+    - coloque [aas](remedio) na minha lista
     - cadastrar um novo medicamento
 
 - intent: informar_remedio
@@ -64,4 +66,8 @@ nlu:
     - me explique sobre [AAS](remedio)
     - qual a função do [ibuprofeno](remedio)?
     - [claritromicina](remedio) serve para quê?
+    - me informe sobre [dipirona](remedio)
+    - o que é [dipirona](remedio)?
 
+- lookup: remedio
+  file: data/remedios.yml
