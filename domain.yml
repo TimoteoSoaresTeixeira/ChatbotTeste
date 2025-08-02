@@ -26,26 +26,45 @@ slots:
 responses:
   utter_saudacao:
   - text: "Olá! Sou o assistente de medicação do VitaLog. Posso adicionar um remédio à sua lista, verificar interações ou explicar para que serve um medicamento."
+
   utter_despedida:
-  - text: "Até logo! Cuide-se bem."
-  utter_agradecer:
-  - text: "De nada! Se precisar, estou aqui."
-  utter_sou_um_bot:
-  - text: "Eu sou um assistente virtual do VitaLog, programado para te ajudar a gerir seus medicamentos com segurança."
-  utter_sobre_vitalog:
-  - text: "O VitaLog é uma plataforma para ajudar a garantir que o seu tratamento com medicamentos seja seguro e eficaz, prevenindo interações perigosas e combatendo a falsificação."
-  utter_pedir_remedio:
-  - text: "Claro. Qual o nome do medicamento que você quer adicionar?"
+  - text: "Até logo! Se precisar de mais alguma coisa, é só chamar."
+
   utter_remedio_adicionado:
   - text: "Ok, adicionei {remedio} à sua lista. Quer adicionar outro, verificar as interações ou saber para que serve algum remédio?"
-  utter_lista_vazia:
-  - text: "A sua lista de medicamentos está vazia no momento. Quer adicionar um?"
-  utter_verificando:
-  - text: "Entendido. A verificar a sua lista de medicamentos em busca de possíveis interações..."
-  utter_remedio_nao_encontrado:
+
+  utter_remedio_ja_adicionado:
+  - text: "O medicamento {remedio} já está na sua lista."
+
+  utter_remedio_nao_identificado:
+  - text: "Não consegui identificar o remédio que você mencionou. Poderia repetir ou verificar se o nome está correto?"
+
+  utter_remedio_nao_existe:
+  - text: "O medicamento '{remedio}' não foi encontrado na minha base de dados. Por favor, verifique se o nome está correto."
+  
+  utter_explicacao_nao_encontrada:
   - text: "Peço desculpa, mas ainda não tenho a explicação para o medicamento '{remedio}' na minha base de dados."
-  utter_remedio_ja_existe:
-  - text: "{remedio} já está na sua lista."
+
+  utter_lista_vazia:
+  - text: "Sua lista de medicamentos está vazia no momento."
+
+  utter_listar_remedios:
+  - text: "Esta é a sua lista de medicamentos atual:\n{lista_remedios}"
+
+  utter_interacao_lista_insuficiente:
+  - text: "Você precisa ter pelo menos dois medicamentos na lista para que eu possa verificar as interações."
+
+  utter_sem_interacoes:
+  - text: "Não encontrei nenhuma interação de risco entre os medicamentos da sua lista. Lembre-se sempre de consultar um médico."
+
+  utter_interacoes_encontradas:
+  - text: "Atenção! Encontrei as seguintes interações de risco:\n{interacoes}"
+
+  utter_ask_remedio:
+  - text: "Claro. Qual o nome do medicamento que você quer adicionar?"
+
+  utter_sou_um_bot:
+  - text: "Eu sou um assistente virtual, desenvolvido para te ajudar com a gestão de medicamentos."
 
 actions:
   - action_adicionar_remedio
