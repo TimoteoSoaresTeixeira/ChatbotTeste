@@ -66,6 +66,9 @@ responses:
   utter_sou_um_bot:
   - text: "Eu sou um assistente virtual, desenvolvido para te ajudar com a gestão de medicamentos."
 
+  utter_sobre_vitalog:
+  - text: "O VitaLog é uma plataforma de gestão inteligente de saúde, projetada para tornar o tratamento com medicamentos mais seguro e fácil, especialmente para quem precisa de mais apoio."
+
 actions:
   - action_adicionar_remedio
   - action_listar_remedios
