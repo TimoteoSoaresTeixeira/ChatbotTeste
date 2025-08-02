@@ -1,0 +1,76 @@
+{
+  "type": "IntentMaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "adicionar_remedio": 0,
+        "affirm": 1,
+        "agradecer": 2,
+        "back": 3,
+        "bot_challenge": 4,
+        "cancelar": 5,
+        "deny": 6,
+        "despedida": 7,
+        "informar_remedio": 8,
+        "listar_remedios": 9,
+        "mood_great": 10,
+        "mood_unhappy": 11,
+        "nlu_fallback": 12,
+        "out_of_scope": 13,
+        "perguntar_funcao_remedio": 14,
+        "resetar_lista": 15,
+        "restart": 16,
+        "saudacao": 17,
+        "session_start": 18,
+        "sobre_vitalog": 19,
+        "verificar_interacoes": 20
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_adicionar_remedio": 13,
+        "action_listar_remedios": 14,
+        "action_verificar_interacoes": 15,
+        "action_resetar_lista": 16,
+        "action_explicar_remedio": 17,
+        "utter_ask_remedio": 18,
+        "utter_despedida": 19,
+        "utter_explicacao_nao_encontrada": 20,
+        "utter_interacao_lista_insuficiente": 21,
+        "utter_interacoes_encontradas": 22,
+        "utter_lista_vazia": 23,
+        "utter_listar_remedios": 24,
+        "utter_remedio_adicionado": 25,
+        "utter_remedio_ja_adicionado": 26,
+        "utter_remedio_nao_existe": 27,
+        "utter_remedio_nao_identificado": 28,
+        "utter_saudacao": 29,
+        "utter_sem_interacoes": 30,
+        "utter_sobre_vitalog": 31,
+        "utter_sou_um_bot": 32
+      },
+      "entities": {
+        "remedio": 0
+      },
+      "slots": {
+        "remedios_list_0": 0
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

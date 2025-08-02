@@ -2,7 +2,7 @@ import yaml
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, AllSlotsReset
 
 class ActionAdicionarRemedio(Action):
     def __init__(self):
@@ -25,8 +25,6 @@ class ActionAdicionarRemedio(Action):
         # Pega o remédio que o Rasa extraiu da fala do usuário
         remedio_entity = next(tracker.get_latest_entity_values("remedio"), None)
 
-        # --- CORREÇÃO DO ERRO 2 ---
-        # Se nenhum remédio foi identificado na frase
         if not remedio_entity:
             dispatcher.utter_message(response="utter_remedio_nao_identificado")
             return []
@@ -39,17 +37,15 @@ class ActionAdicionarRemedio(Action):
             dispatcher.utter_message(response="utter_remedio_nao_existe", remedio=remedio_entity)
             return []
 
-        # --- CORREÇÃO DO ERRO 1 ---
         # Pega a lista de remédios atual do "slot" (memória do bot)
-        # Se a lista não existir ainda, começa com uma lista vazia []
         remedios_list = tracker.get_slot("remedios_list") or []
 
         # Adiciona o novo remédio (já normalizado) à lista
         if remedio_normalizado not in remedios_list:
             remedios_list.append(remedio_normalizado)
-            dispatcher.utter_message(response="utter_remedio_adicionado", remedio=remedio_entity)
+            dispatcher.utter_message(response="utter_remedio_adicionado", remedio=remedio_entity.capitalize())
         else:
-            dispatcher.utter_message(response="utter_remedio_ja_adicionado", remedio=remedio_entity)
+            dispatcher.utter_message(response="utter_remedio_ja_adicionado", remedio=remedio_entity.capitalize())
 
         # Devolve a lista atualizada para o slot, salvando o estado
         return [SlotSet("remedios_list", remedios_list)]
@@ -76,11 +72,7 @@ class ActionListarRemedios(Action):
 
 class ActionExplicarRemedio(Action):
     def __init__(self):
-        """
-        Carrega a base de conhecimento de medicamentos uma vez na inicialização.
-        """
         with open('data/expliqueMec.yml', 'r', encoding='utf-8') as file:
-            # Padroniza as chaves para minúsculas na inicialização
             self.db_remedios = {k.lower(): v for k, v in yaml.safe_load(file).items()}
 
     def name(self) -> Text:
@@ -96,15 +88,11 @@ class ActionExplicarRemedio(Action):
             dispatcher.utter_message(response="utter_remedio_nao_identificado")
             return []
 
-        # --- CORREÇÃO DO ERRO 3 ---
-        # Padroniza o nome do remédio para a busca
         remedio_normalizado = remedio_entity.lower()
-
-        # Busca a explicação no nosso "banco de dados" de remédios
         explicacao = self.db_remedios.get(remedio_normalizado)
 
         if explicacao:
-            resposta = f"Claro! O medicamento {remedio_entity.capitalize()} serve para:\n\n{explicacao}"
+            resposta = f"Claro! O medicamento {remedio_entity.capitalize()} serve para o seguinte:\n\n{explicacao}"
             dispatcher.utter_message(text=resposta)
         else:
             dispatcher.utter_message(response="utter_explicacao_nao_encontrada", remedio=remedio_entity)
@@ -113,9 +101,6 @@ class ActionExplicarRemedio(Action):
 
 class ActionVerificarInteracoes(Action):
     def __init__(self):
-        """
-        Carrega a base de conhecimento de interações uma vez na inicialização.
-        """
         with open('data/interacoes.yml', 'r', encoding='utf-8') as file:
             self.db_interacoes = yaml.safe_load(file).get('interacoes', [])
 
@@ -133,13 +118,11 @@ class ActionVerificarInteracoes(Action):
             return []
 
         interacoes_encontradas = []
-        # Compara cada remédio com todos os outros na lista
         for i in range(len(remedios_list)):
             for j in range(i + 1, len(remedios_list)):
                 remedio1 = remedios_list[i]
                 remedio2 = remedios_list[j]
 
-                # Verifica se a combinação existe na base de interações
                 for interacao in self.db_interacoes:
                     pair = set(interacao['pair'])
                     if set([remedio1, remedio2]) == pair:
@@ -154,3 +137,14 @@ class ActionVerificarInteracoes(Action):
             dispatcher.utter_message(response="utter_interacoes_encontradas", interacoes=texto_interacoes)
 
         return []
+
+class ActionResetarLista(Action):
+    def name(self) -> Text:
+        return "action_resetar_lista"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        dispatcher.utter_message(text="Ok, a sua lista de medicamentos foi limpa.")
+        return [AllSlotsReset()]

@@ -30,3 +30,13 @@ rules:
   steps:
   - intent: cancelar
   - action: utter_despedida
+
+- rule: Lidar com agradecimento
+  steps:
+  - intent: agradecer
+  - action: utter_despedida
+
+- rule: Lidar com cancelamento
+  steps:
+  - intent: cancelar
+  - action: utter_despedida
