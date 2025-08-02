@@ -35,7 +35,7 @@ stories:
   - intent: listar_remedios
   - action: action_listar_remedios
 
-- story: Utilizador pergunta a função de um remédio
+- story: Utilizador pergunta a função de um remédio diretamente
   steps:
   - intent: perguntar_funcao_remedio
     entities:

@@ -66,6 +66,4 @@ nlu:
     - [claritromicina](remedio) serve para quê?
 
 - lookup: remedio
-  examples: |
-    - data/lookup/remedios.txt
-
+  file: data/lookup/remediosLivre.yml

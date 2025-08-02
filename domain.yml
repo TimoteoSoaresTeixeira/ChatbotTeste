@@ -44,6 +44,8 @@ responses:
   - text: "Entendido. A verificar a sua lista de medicamentos em busca de possíveis interações..."
   utter_remedio_nao_encontrado:
   - text: "Peço desculpa, mas ainda não tenho a explicação para o medicamento '{remedio}' na minha base de dados."
+  utter_remedio_ja_existe:
+  - text: "{remedio} já está na sua lista."
 
 actions:
   - action_adicionar_remedio
