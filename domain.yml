@@ -1,24 +1,30 @@
-version: "3.1"
+ersion: "3.1"
 
 intents:
-  - saudacao
-  - despedida
-  - agradecer
-  - sou_um_bot
-  - sobre_vitalog
-  - adicionar_remedio
-  - informar_remedio
-  - listar_remedios
-  - verificar_interacao
-  - perguntar_funcao_remedio
+- saudacao
+- despedida
+- agradecer
+- sobre_vitalog
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- adicionar_remedio
+- informar_remedio
+- listar_remedios
+- verificar_interacoes  # Corrigido de "verificar_interacao"
+- perguntar_funcao_remedio
+- resetar_lista
+- cancelar              # Adicionado
 
 entities:
-  - remedio
+- remedio
 
 slots:
-  lista_remedios:
+  remedios_list:
     type: list
-    influence_conversation: false
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: remedio
@@ -70,12 +76,8 @@ responses:
   - text: "O VitaLog é uma plataforma de gestão inteligente de saúde, projetada para tornar o tratamento com medicamentos mais seguro e fácil, especialmente para quem precisa de mais apoio."
 
 actions:
-  - action_adicionar_remedio
-  - action_listar_remedios
-  - action_verificar_interacoes
-  - action_resetar_lista
-  - action_explicar_remedio
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+- action_adicionar_remedio
+- action_listar_remedios
+- action_verificar_interacoes
+- action_resetar_lista
+- action_explicar_remedio
