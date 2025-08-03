@@ -1,0 +1,6 @@
+[
+  {
+    "name": "remedio",
+    "pattern": "(\\baas\\b|\\babacavir\\b|\\babelcet\\b|\\babiraterona\\b|\\baciclovir\\b|\\bácido\\ acetilsalicílico\\b|\\bácido\\ fólico\\b|\\b\\.\\.\\.\\ \\(continue\\ com\\ a\\ sua\\ lista\\ completa\\ de\\ remédios\\ aqui\\)\\b)"
+  }
+]

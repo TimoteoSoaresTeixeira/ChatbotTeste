@@ -4,16 +4,21 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, AllSlotsReset
 
+# --- FUNÇÃO AUXILIAR PARA CARREGAR E LIMPAR OS DADOS ---
+# Isto evita repetir código e garante que os dados são carregados da mesma forma.
+def carregar_base_remedios():
+    with open('data/expliqueMec.yml', 'r', encoding='utf-8') as file:
+        dados_yaml = yaml.safe_load(file)
+        # AQUI ESTÁ A CORREÇÃO PRINCIPAL:
+        # Acessamos a "gaveta" 'explicacoes' antes de ler os itens.
+        base_de_remedios = dados_yaml.get('explicacoes', {})
+        
+        # Normalizamos os nomes dos remédios para a busca funcionar sempre.
+        return {str(k).strip().lower(): v for k, v in base_de_remedios.items()}
+
 class ActionAdicionarRemedio(Action):
     def __init__(self):
-        """
-        Carrega a base de conhecimento de medicamentos uma vez na inicialização.
-        Isso é mais eficiente do que carregar o arquivo a cada chamada.
-        """
-        with open('data/expliqueMec.yml', 'r', encoding='utf-8') as file:
-            # Padroniza todas as chaves (nomes dos remédios) para minúsculas
-            # para evitar erros de case-sensitive (ex: "Dipirona" vs "dipirona")
-            self.db_remedios = {k.lower(): v for k, v in yaml.safe_load(file).items()}
+        self.db_remedios = carregar_base_remedios()
 
     def name(self) -> Text:
         return "action_adicionar_remedio"
@@ -22,32 +27,26 @@ class ActionAdicionarRemedio(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        # Pega o remédio que o Rasa extraiu da fala do usuário
         remedio_entity = next(tracker.get_latest_entity_values("remedio"), None)
 
         if not remedio_entity:
             dispatcher.utter_message(response="utter_remedio_nao_identificado")
             return []
 
-        # Padroniza o nome do remédio para busca (minúsculas)
-        remedio_normalizado = remedio_entity.lower()
+        remedio_normalizado = remedio_entity.strip().lower()
 
-        # Verifica se o remédio existe na nossa base de conhecimento
         if remedio_normalizado not in self.db_remedios:
             dispatcher.utter_message(response="utter_remedio_nao_existe", remedio=remedio_entity)
             return []
 
-        # Pega a lista de remédios atual do "slot" (memória do bot)
         remedios_list = tracker.get_slot("remedios_list") or []
 
-        # Adiciona o novo remédio (já normalizado) à lista
         if remedio_normalizado not in remedios_list:
             remedios_list.append(remedio_normalizado)
             dispatcher.utter_message(response="utter_remedio_adicionado", remedio=remedio_entity.capitalize())
         else:
             dispatcher.utter_message(response="utter_remedio_ja_adicionado", remedio=remedio_entity.capitalize())
 
-        # Devolve a lista atualizada para o slot, salvando o estado
         return [SlotSet("remedios_list", remedios_list)]
 
 class ActionListarRemedios(Action):
@@ -63,17 +62,14 @@ class ActionListarRemedios(Action):
         if not remedios_list:
             dispatcher.utter_message(response="utter_lista_vazia")
         else:
-            # Formata a lista para uma apresentação mais clara
             lista_formatada = "\n".join([f"- {remedio.capitalize()}" for remedio in remedios_list])
             dispatcher.utter_message(response="utter_listar_remedios", lista_remedios=lista_formatada)
 
         return []
 
-
 class ActionExplicarRemedio(Action):
     def __init__(self):
-        with open('data/expliqueMec.yml', 'r', encoding='utf-8') as file:
-            self.db_remedios = {k.lower(): v for k, v in yaml.safe_load(file).items()}
+        self.db_remedios = carregar_base_remedios()
 
     def name(self) -> Text:
         return "action_explicar_remedio"
@@ -88,7 +84,7 @@ class ActionExplicarRemedio(Action):
             dispatcher.utter_message(response="utter_remedio_nao_identificado")
             return []
 
-        remedio_normalizado = remedio_entity.lower()
+        remedio_normalizado = remedio_entity.strip().lower()
         explicacao = self.db_remedios.get(remedio_normalizado)
 
         if explicacao:

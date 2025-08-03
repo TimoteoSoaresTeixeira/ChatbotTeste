@@ -2,6 +2,7 @@
 # A nossa ação em Python irá ler este ficheiro para encontrar as explicações.
 
 explicacoes:
+  aas: "O AAS (Ácido Acetilsalicílico) é um anti-inflamatório, analgésico e antitérmico, usado para aliviar dores e febre. Em doses baixas, também é usado para prevenir a formação de coágulos no sangue."
   claritromicina: "A Claritromicina é um antibiótico usado para tratar diversas infeções bacterianas, como sinusite, bronquite e infeções de pele."
   cloreto de potássio: "O Cloreto de Potássio é um suplemento usado para tratar ou prevenir os baixos níveis de potássio no sangue (hipocalemia)."
   cloreto de sódio: "O Cloreto de Sódio (sal comum) em soluções estéreis é usado para hidratação, diluição de medicamentos e limpeza de feridas."
