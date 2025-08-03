@@ -146,6 +146,22 @@ nlu:
     - qual a finalidade de [aas](remedio)?
     - explique [cromo](remedio)
     - sobre o [dorzolamida](remedio)
+    - qual a utilidade de [AAS](remedio)?
+    - [Cloreto de sódio](remedio) é bom para quê?
+    - me explica o [zileutona](remedio), por favor.
+    - receitaram-me [AAS](remedio), o que isso faz?
+    - qual a finalidade do [cromo](remedio)?
+    - explique o [cloridrato de ciclobenzaprina](remedio)
+    - sobre o medicamento [dipirona](remedio)
+    - me dá detalhes sobre [paracetamol](remedio)
+    - o remédio [ibuprofeno](remedio), qual a sua função?
+    # --- NOVOS EXEMPLOS COM NOMES COMPRIDOS ---
+    - me fale sobre [edetato de cálcio dissódico](remedio)
+    - o que faz o [edetato de cálcio dissódico](remedio)?
+    - para que serve [gadopentetato de dimeglumina](remedio)
+    - qual a função do [poliestirenossulfonato de cálcio](remedio)?
+    - adicionar [cloridrato de amitriptilina](remedio)
+    - quero saber sobre [cloridrato de dexmedetomidina](remedio)
 
 - intent: resetar_lista
   examples: |
@@ -163,22 +179,30 @@ nlu:
     - esquece
     - mudei de ideia
     - não precisa mais
+
+# Esta é a forma correta de ensinar o vocabulário ao bot.
+# A lista abaixo foi gerada automaticamente a partir do seu ficheiro expliqueMec.yml
 - lookup: remedio
   examples: |
-    - XAGLUSEF
-    - NEOSALDINA MUSCULAR MAX
-    - SITAREDDYS
-    - ÉSTERES ETÍLICOS DE ÁCIDOS GRAXOS ÔMEGA-3
+    - aas
+    - abacavir
+    - abelcet
+    - abiraterona
+    - aciclovir
+    - ácido acetilsalicílico
+    - ácido fólico
     - claritromicina
-    - cloridrato de atomoxetina
-    - metronidazol
-    - cloridrato de amiodarona
+    - cloreto de potássio
+    - cloreto de sódio
+    - cloreto de suxametônio
     - cloridrato de amantadina
     - cloridrato de ambroxol
+    - cloridrato de amiodarona
     - cloridrato de amitriptilina
     - cloridrato de amorolfina
     - cloridrato de anagrelida
     - cloridrato de apomorfina
+    - cloridrato de atomoxetina
     - cloridrato de betaxolol
     - cloridrato de biperideno
     - cloridrato de bupivacaína
@@ -268,9 +292,6 @@ nlu:
     - cloridrato de vardenafila
     - cloridrato de venlafaxina
     - cloridrato de verapamil
-    - cloreto de potássio
-    - cloreto de sódio
-    - cloreto de suxametônio
     - clortalidona
     - clozapina
     - coaltar

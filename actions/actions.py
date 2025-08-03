@@ -39,15 +39,21 @@ class ActionAdicionarRemedio(Action):
             dispatcher.utter_message(response="utter_remedio_nao_existe", remedio=remedio_entity)
             return []
 
-        remedios_list = tracker.get_slot("remedios_list") or []
+        # --- AQUI ESTÁ A CORREÇÃO DO BUG DA LISTA ---
+        # 1. Pega a lista atual do slot.
+        lista_atual = tracker.get_slot("remedios_list") or []
+        # 2. CRIA UMA CÓPIA da lista para trabalhar de forma segura.
+        nova_lista = lista_atual.copy()
 
-        if remedio_normalizado not in remedios_list:
-            remedios_list.append(remedio_normalizado)
+        # 3. Adiciona o novo item à cópia.
+        if remedio_normalizado not in nova_lista:
+            nova_lista.append(remedio_normalizado)
             dispatcher.utter_message(response="utter_remedio_adicionado", remedio=remedio_entity.capitalize())
         else:
             dispatcher.utter_message(response="utter_remedio_ja_adicionado", remedio=remedio_entity.capitalize())
 
-        return [SlotSet("remedios_list", remedios_list)]
+        # 4. Devolve a nova lista completa para o slot.
+        return [SlotSet("remedios_list", nova_lista)]
 
 class ActionListarRemedios(Action):
     def name(self) -> Text:
