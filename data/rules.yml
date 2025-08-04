@@ -1,6 +1,12 @@
 version: "3.1"
 
 rules:
+- rule: Explicar a função de um remédio quando perguntado
+  description: Esta é a regra principal para a apresentação.
+  steps:
+  - intent: perguntar_funcao_remedio
+  - action: action_explicar_remedio
+
 - rule: Dizer olá
   steps:
   - intent: saudacao
@@ -11,25 +17,15 @@ rules:
   - intent: despedida
   - action: utter_despedida
 
-- rule: Responder sobre si mesmo
+- rule: Responder a um desafio de bot
   steps:
-  - intent: sou_um_bot
+  - intent: bot_challenge
   - action: utter_sou_um_bot
 
 - rule: Explicar o projeto
   steps:
   - intent: sobre_vitalog
   - action: utter_sobre_vitalog
-
-- rule: Explicar a função de um remédio quando perguntado
-  steps:
-  - intent: perguntar_funcao_remedio
-  - action: action_explicar_remedio
-
-- rule: Lidar com cancelamento
-  steps:
-  - intent: cancelar
-  - action: utter_despedida
 
 - rule: Lidar com agradecimento
   steps:
@@ -39,4 +35,11 @@ rules:
 - rule: Lidar com cancelamento
   steps:
   - intent: cancelar
+  - action: utter_despedida
+
+- rule: Lidar com negação a uma pergunta
+  condition:
+  - active_loop: null
+  steps:
+  - intent: deny
   - action: utter_despedida

@@ -1,13 +1,64 @@
 version: "3.1"
 
 stories:
-- story: Utilizador adiciona remédios e verifica interações
+# ---------------------------------------------------------------------------------
+# HISTÓRIAS DE "CAMINHO FELIZ" (CONVERSAS IDEAIS E COMPLETAS)
+# Estas histórias ensinam o fluxo perfeito de uma conversa longa e bem-sucedida.
+# ---------------------------------------------------------------------------------
+
+- story: Caminho feliz completo - Adicionar, Explicar, Listar, Verificar e Sair
   steps:
   - intent: saudacao
   - action: utter_saudacao
   - intent: adicionar_remedio
     entities:
     - remedio: "Dipirona"
+  - action: action_adicionar_remedio
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: "Dipirona"
+  - action: action_explicar_remedio
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "AAS"
+  - action: action_adicionar_remedio
+  - intent: listar_remedios
+  - action: action_listar_remedios
+  - intent: verificar_interacoes
+  - action: action_verificar_interacoes
+  - intent: despedida
+  - action: utter_despedida
+
+- story: Caminho feliz com o bot a perguntar o nome várias vezes
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: adicionar_remedio
+  - action: utter_ask_remedio
+  - intent: informar_remedio
+    entities:
+    - remedio: "Ibuprofeno"
+  - action: action_adicionar_remedio
+  - intent: adicionar_remedio
+  - action: utter_ask_remedio
+  - intent: informar_remedio
+    entities:
+    - remedio: "Paracetamol"
+  - action: action_adicionar_remedio
+  - intent: listar_remedios
+  - action: action_listar_remedios
+  - intent: despedida
+  - action: utter_despedida
+
+- story: Utilizador começa explicando, depois adiciona e verifica
+  steps:
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: "Varfarina"
+  - action: action_explicar_remedio
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Varfarina"
   - action: action_adicionar_remedio
   - intent: adicionar_remedio
     entities:
@@ -16,54 +67,238 @@ stories:
   - intent: verificar_interacoes
   - action: action_verificar_interacoes
 
-- story: Bot pergunta o nome do remédio
-  steps:
-  - intent: adicionar_remedio
-  - action: utter_ask_remedio
-  - intent: informar_remedio
-    entities:
-    - remedio: "Ibuprofeno"
-  - action: action_adicionar_remedio
+# ---------------------------------------------------------------------------------
+# HISTÓRIAS CURTAS E DIRETAS (FOCO EM TAREFAS ÚNICAS)
+# Ensinam o bot a ser eficiente e ir direto ao ponto.
+# ---------------------------------------------------------------------------------
 
-- story: Utilizador adiciona um remédio e depois lista
-  steps:
-  - intent: adicionar_remedio
-    entities:
-    - remedio: "Paracetamol"
-  - action: action_adicionar_remedio
-  - intent: listar_remedios
-  - action: action_listar_remedios
-
-- story: Utilizador pergunta a função de um remédio diretamente
+- story: Utilizador só quer saber sobre um remédio e sai
   steps:
   - intent: perguntar_funcao_remedio
     entities:
     - remedio: "Claritromicina"
   - action: action_explicar_remedio
+  - intent: agradecer
+  - action: utter_despedida
 
-- story: Caminho simples de saudação e despedida
+- story: Utilizador só quer saber sobre um remédio (sem saudação)
+  steps:
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: "Losartana"
+  - action: action_explicar_remedio
+
+- story: Utilizador adiciona um remédio e depois lista
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Sinvastatina"
+  - action: action_adicionar_remedio
+  - intent: listar_remedios
+  - action: action_listar_remedios
+
+- story: Utilizador adiciona dois remédios e lista
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Metformina"
+  - action: action_adicionar_remedio
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Glibenclamida"
+  - action: action_adicionar_remedio
+  - intent: listar_remedios
+  - action: action_listar_remedios
+
+- story: Utilizador apenas lista os remédios
+  steps:
+  - intent: listar_remedios
+  - action: action_listar_remedios
+
+- story: Utilizador apenas saúda e se despede
   steps:
   - intent: saudacao
   - action: utter_saudacao
   - intent: despedida
   - action: utter_despedida
 
-- story: interactive_story_1
+# ---------------------------------------------------------------------------------
+# HISTÓRIAS DE INTERRUPÇÃO E MUDANÇA DE CONTEXTO
+# Estas são cruciais para ensinar o bot a ser flexível.
+# ---------------------------------------------------------------------------------
+
+- story: Utilizador pede para adicionar, mas depois cancela
+  steps:
+  - intent: adicionar_remedio
+  - action: utter_ask_remedio
+  - intent: cancelar
+  - action: utter_despedida
+
+- story: Utilizador pede para adicionar, mas depois diz que não
+  steps:
+  - intent: adicionar_remedio
+  - action: utter_ask_remedio
+  - intent: deny
+  - action: utter_despedida
+
+- story: Interrupção com pergunta sobre o bot no meio da adição
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Anlodipino"
+  - action: action_adicionar_remedio
+  - intent: bot_challenge
+  - action: utter_sou_um_bot
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Hidroclorotiazida"
+  - action: action_adicionar_remedio
+  - intent: listar_remedios
+  - action: action_listar_remedios
+
+- story: Utilizador pergunta sobre um remédio, depois sobre outro
   steps:
   - intent: perguntar_funcao_remedio
     entities:
-    - remedio: de
-  - slot_was_set:
-    - remedios_list:
-      - de
-  - action: action_explicar_remedio
+    - remedio: "Sertralina"
   - action: action_explicar_remedio
   - intent: perguntar_funcao_remedio
     entities:
-    - remedio: de
-  - slot_was_set:
-    - remedios_list:
-      - de
+    - remedio: "Clonazepam"
+  - action: action_explicar_remedio
+
+- story: Utilizador pergunta sobre o projeto no meio de uma tarefa
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Enalapril"
+  - action: action_adicionar_remedio
+  - intent: sobre_vitalog
+  - action: utter_sobre_vitalog
+  - intent: listar_remedios
+  - action: action_listar_remedios
+
+- story: Utilizador agradece no meio da conversa
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Atenolol"
+  - action: action_adicionar_remedio
+  - intent: agradecer
+  - action: utter_despedida # Agradecimento pode encerrar a conversa
+
+# ---------------------------------------------------------------------------------
+# HISTÓRIAS COM MÚLTIPLAS FUNÇÕES E CONTEXTO
+# Ensinam o bot a lidar com conversas mais longas e complexas.
+# ---------------------------------------------------------------------------------
+
+- story: Adiciona, explica, adiciona mais um e verifica
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Varfarina"
+  - action: action_adicionar_remedio
   - intent: perguntar_funcao_remedio
     entities:
-    - remedio: fosfato de potássio
+    - remedio: "Varfarina"
+  - action: action_explicar_remedio
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "AAS"
+  - action: action_adicionar_remedio
+  - intent: verificar_interacoes
+  - action: action_verificar_interacoes
+
+- story: Explica, depois adiciona à lista
+  steps:
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: "Propranolol"
+  - action: action_explicar_remedio
+  - intent: affirm # O utilizador pode dizer "sim" ou "ok, adicione"
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Propranolol"
+  - action: action_adicionar_remedio
+
+- story: Limpa a lista e começa de novo
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Lisinopril"
+  - action: action_adicionar_remedio
+  - intent: listar_remedios
+  - action: action_listar_remedios
+  - intent: resetar_lista
+  - action: action_resetar_lista
+  - intent: listar_remedios
+  - action: action_listar_remedios # A ação vai dizer que a lista está vazia
+
+- story: Adiciona 3 remédios e depois verifica
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Furosemida"
+  - action: action_adicionar_remedio
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Espironolactona"
+  - action: action_adicionar_remedio
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Digoxina"
+  - action: action_adicionar_remedio
+  - intent: verificar_interacoes
+  - action: action_verificar_interacoes
+
+# ---------------------------------------------------------------------------------
+# HISTÓRIAS PARA CASOS DE ERRO E COMPORTAMENTO INESPERADO
+# Ensinam o bot a lidar com situações onde o utilizador faz algo inesperado.
+# ---------------------------------------------------------------------------------
+
+- story: Tenta verificar interações com menos de 2 remédios
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Omeprazol"
+  - action: action_adicionar_remedio
+  - intent: verificar_interacoes
+  - action: action_verificar_interacoes # A ação vai responder que a lista é insuficiente
+
+- story: Adiciona um remédio que já está na lista
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Captopril"
+  - action: action_adicionar_remedio
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Captopril"
+  - action: action_adicionar_remedio # A ação vai responder que o remédio já existe
+
+- story: Utilizador começa listando uma lista vazia
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: listar_remedios
+  - action: action_listar_remedios # A ação vai dizer que a lista está vazia
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "Tadalafila"
+  - action: action_adicionar_remedio
+  - intent: listar_remedios
+  - action: action_listar_remedios # Agora a lista tem um item
+
+- story: Utilizador pergunta sobre um remédio que não existe
+  steps:
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: "RemedioInexistente"
+  - action: action_explicar_remedio # A ação vai dizer que não encontrou
+
+- story: Utilizador tenta adicionar um remédio que não existe
+  steps:
+  - intent: adicionar_remedio
+    entities:
+    - remedio: "RemedioInventado"
+  - action: action_adicionar_remedio # A ação vai dizer que não encontrou
