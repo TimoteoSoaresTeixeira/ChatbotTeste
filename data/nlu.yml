@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: saudacao
   examples: |
@@ -14,7 +13,6 @@ nlu:
     - opa, tudo certo?
     - começar
     - iniciar
-
 - intent: despedida
   examples: |
     - tchau
@@ -26,7 +24,6 @@ nlu:
     - era só isso
     - xau
     - até mais
-
 - intent: agradecer
   examples: |
     - obrigado
@@ -37,7 +34,6 @@ nlu:
     - obg
     - gratidão
     - agradeço
-
 - intent: sobre_vitalog
   examples: |
     - o que é o vitalog?
@@ -46,7 +42,6 @@ nlu:
     - o que você faz?
     - qual a sua função?
     - como você funciona?
-
 - intent: affirm
   examples: |
     - sim
@@ -57,7 +52,6 @@ nlu:
     - afirmativo
     - positivo
     - quero sim
-
 - intent: deny
   examples: |
     - não
@@ -66,7 +60,6 @@ nlu:
     - negativo
     - jamais
     - não quero
-
 - intent: bot_challenge
   examples: |
     - você é um robô?
@@ -74,7 +67,6 @@ nlu:
     - quem é você?
     - estou falando com um bot?
     - qual seu nome?
-
 - intent: adicionar_remedio
   examples: |
     - quero adicionar um remédio
@@ -91,7 +83,6 @@ nlu:
     - bota aí na lista o [clonazepam](remedio)
     - quero registrar um novo medicamento
     - por favor, adicione [sertralina](remedio)
-
 - intent: informar_remedio
   examples: |
     - o nome é [dipirona](remedio)
@@ -101,7 +92,6 @@ nlu:
     - o remédio é [cloreto de sódio](remedio)
     - o medicamento se chama [sertralina](remedio)
     - anota aí, [venlafaxina](remedio)
-
 - intent: listar_remedios
   examples: |
     - qual a minha lista de remédios?
@@ -112,7 +102,6 @@ nlu:
     - me diga o que tem na lista
     - mostre meus medicamentos
     - quais os remédios na lista?
-
 - intent: verificar_interacoes
   examples: |
     - verificar interações
@@ -124,7 +113,6 @@ nlu:
     - um interfere com o outro?
     - cheque os conflitos
     - faz a checagem de interação
-
 - intent: perguntar_funcao_remedio
   examples: |
     - para que serve [dipirona](remedio)?
@@ -155,14 +143,14 @@ nlu:
     - sobre o medicamento [dipirona](remedio)
     - me dá detalhes sobre [paracetamol](remedio)
     - o remédio [ibuprofeno](remedio), qual a sua função?
-    # --- NOVOS EXEMPLOS COM NOMES COMPRIDOS ---
     - me fale sobre [edetato de cálcio dissódico](remedio)
     - o que faz o [edetato de cálcio dissódico](remedio)?
     - para que serve [gadopentetato de dimeglumina](remedio)
     - qual a função do [poliestirenossulfonato de cálcio](remedio)?
     - adicionar [cloridrato de amitriptilina](remedio)
     - quero saber sobre [cloridrato de dexmedetomidina](remedio)
-
+    - me explica o que é fosfato [de](remedio) potássio
+    - me explica o que é [fosfato de potássio](remedio)
 - intent: resetar_lista
   examples: |
     - quero limpar a lista
@@ -170,7 +158,6 @@ nlu:
     - resetar lista
     - começar do zero
     - apague a lista de medicamentos
-
 - intent: cancelar
   examples: |
     - cancelar
@@ -179,9 +166,6 @@ nlu:
     - esquece
     - mudei de ideia
     - não precisa mais
-
-# Esta é a forma correta de ensinar o vocabulário ao bot.
-# A lista abaixo foi gerada automaticamente a partir do seu ficheiro expliqueMec.yml
 - lookup: remedio
   examples: |
     - aas

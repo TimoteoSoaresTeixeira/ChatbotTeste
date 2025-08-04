@@ -40,3 +40,30 @@ stories:
     entities:
     - remedio: "Claritromicina"
   - action: action_explicar_remedio
+
+- story: Caminho simples de saudação e despedida
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: de
+  - slot_was_set:
+    - remedios_list:
+      - de
+  - action: action_explicar_remedio
+  - action: action_explicar_remedio
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: de
+  - slot_was_set:
+    - remedios_list:
+      - de
+  - intent: perguntar_funcao_remedio
+    entities:
+    - remedio: fosfato de potássio
