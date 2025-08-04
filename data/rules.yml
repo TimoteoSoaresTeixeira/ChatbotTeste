@@ -2,7 +2,7 @@ version: "3.1"
 
 rules:
 - rule: Explicar a função de um remédio quando perguntado
-  description: Esta é a regra principal para a apresentação.
+  # Esta é a regra principal para a apresentação.
   steps:
   - intent: perguntar_funcao_remedio
   - action: action_explicar_remedio

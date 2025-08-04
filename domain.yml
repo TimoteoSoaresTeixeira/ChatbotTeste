@@ -50,7 +50,7 @@ responses:
   - text: "Eu procurei aqui na minha base de dados, mas não encontrei o medicamento '{remedio}'. Será que o nome está certinho?"
 
   utter_explicacao_nao_encontrada:
-  - text: "Puxa, eu ainda não tenho a explicação para o '{remedio}'. Estou sempre a aprender, mas essa informação eu vou ficar a dever por enquanto."
+  - text: "Puxa, eu ainda não tenho a explicação para o '{remedio}'. Estou sempre a aprender, mas essa informação eu vou ficar a dever por enquanto, mas se o remedio realmente existe verifique se o escreveu corretamente"
 
   utter_lista_vazia:
   - text: "A sua lista de medicamentos está vazia no momento. Quer adicionar o primeiro?"
