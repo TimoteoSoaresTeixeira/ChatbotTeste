@@ -72,7 +72,6 @@ nlu:
 
 - intent: perguntar_funcao_remedio
   examples: |
-    # Exemplos curtos e diretos
     - [dipirona](remedio)
     - o que é [aas](remedio)?
     - para que serve [paracetamol](remedio)
@@ -81,8 +80,6 @@ nlu:
     - [desloratadina](remedio)
     - qual a função de [omeprazol](remedio)?
     - [clonazepam](remedio) serve para quê?
-    
-    # Exemplos com nomes compostos e acentos
     - o que é [cloreto de sódio](remedio)?
     - me explique o que é [desloratadina](remedio)
     - para que serve o [ácido mefenâmico](remedio)
@@ -92,6 +89,25 @@ nlu:
     - [estearato de eritromicina](remedio)
     - o que o [cloridrato de propranolol](remedio) faz?
     - [ácido fólico](remedio)
+    - para que serve o [cloridrato de fexofenadina](remedio)
+    - me fale sobre o [cloridrato de fexofenadina](remedio)
+    - o que é [cloridrato de fexofenadina](remedio)?
+    - me explica o [ácido mefanâmico](remedio)
+    - qual a função do [ácido acetilsalicílico](remedio)
+    - [ácido acetilsalicílico](remedio)
+    - [cloridrato de fexofenadina](remedio)
+    - [ácido mefanâmico](remedio)
+    - para que serve [losartana potássica](remedio)
+    - o que faz a [amoxicilina + clavulanato de potássio](remedio)
+    # --- NOVOS EXEMPLOS PARA ROBUSTEZ ---
+    - qual a função do [cloridrato de proparacaína](remedio)
+    - o que é [cloridrato de proparacaína](remedio)
+    - me fale sobre [cloridrato de proparacaína](remedio)
+    - [cloridrato de proparacaína](remedio)
+    - para que serve o [cloridrato de tansulosina](remedio)
+    - explique [cloridrato de metformina](remedio)
+    - o que faz o [cloridrato de petidina](remedio)?
+    - [cloridrato de ondansetrona](remedio)
 
 - intent: resetar_lista
   examples: |
@@ -794,3 +810,505 @@ nlu:
     - abacavir
     - ácido mefenâmico
     - zucapsaicina
+    - 1/6 molar halex istar
+- a curitybina
+- a saude da mulher
+- a.f.b.m
+- aas protect
+- abaciclovir
+- abba
+- abbot efedrina
+- abbottracurium
+- abc
+- abc plus
+- abcalcium b12
+- abciximab
+- abcler abnat
+- abederil
+- abedosec
+- abelia
+- abepoten
+- aberalgina
+- abfor gerin
+- abidor
+- abiflan
+- abilify
+- abinesil
+- ablok
+- ablok plus
+- abobora d'anta
+- abrena
+- abretia
+- abrifit
+- abrilar
+- absten s
+- acalka
+- acalmil
+- acalmilfito
+- acarsan
+- accera
+- accolate
+- accupril
+- accuvit
+- acebrofilina
+- acecilico
+- aceclofenac
+- aceclofenaco
+- acedilat
+- aceflor
+- acemedrox
+- aceponato de hidrocortisona
+- aceratum
+- acerogrip c
+- acerol
+- acerolita
+- acerolup c
+- acertalix
+- acertanlo
+- acertil
+- acesyl
+- acetamil
+- acetamol
+- acetan
+- acetato de ciproterona
+- acetato de dl alfa tocoferil
+- acetato de dl alfa tocoferila
+- acetato de eptifibatide
+- acetato de guanabenzo
+- acetato de hidrocortisona
+- acetato de leuprolide
+- acetato de megestrol
+- acetato de potassio
+- acetato de prednisolona
+- acetato de retinol
+- acetato de sodio
+- acetato de sódio
+- acetato de sódio tri-hidratado
+- acetato de tocoferol
+- acetato de zinco b.braun
+- acetazolamida
+- acetazona
+- aceticil
+- acetilasa
+- acetilcisteina
+- acetilcisteína
+- acetildor
+- acetilessin
+- acetilsalicilato de lisina
+- acetilsalil
+- acetitol
+- acetoflux
+- acetonida de fluocinolona
+- acetonida de triancinolona
+- acetylen
+- aceviton
+- acezo
+- aceína
+- acfol
+- acheflan
+- aciclofar
+- aciclomax
+- aciclomed
+- aciclor
+- aciclovan
+- aciclovir
+- aciclovir 250 mg
+- aciclovir sodico
+- acidalic
+- aciderm
+- acidex
+- acido acel tilsalicilico
+- acido acetil salicilico
+- acido acetil salicilico tamponado
+- acido acetilsalicilico
+- acido acetilsalicilico de lisina
+- acido ascorbico
+- acido ascórbico
+- acido dimercaptosuccinico
+- acido dimercaptosuccionico
+- acido folico - eurofarma
+- acido folinico
+- acido fênico
+- acido mefenamico
+- acido nalidixico
+- acido salicilico
+- acido tranexamico
+- acido valproico
+- acido zoledronico
+- acinic
+- aciveral
+- acivirax
+- aclaf
+- aclasta
+- acnase
+- acnase gel
+- acnil
+- acnison
+- acnova
+- acog
+- acolitium
+- acomplia
+- aconvulsin
+- acotermon
+- acridin
+- acti-valda
+- acticalcin
+- actifedrin
+- actilyse
+- actiprofen
+- active plus
+- activelle
+- actonel
+- actonel trio
+- actos
+- actos met
+- actparin
+- acu fresh
+- acu fresh g
+- acular
+- acyclo
+- ad
+- ad - cálcio
+- ad furp
+- ad til
+- ad-element
+- ad-muc
+- ad-til
+- ad-vitam
+- adacel
+- adacel polio
+- adacne
+- adacne clin
+- adacor
+- adalex
+- adapel
+- adapta
+- adaptis gel
+- adcetris
+- adcirca
+- addaven
+- addera d3
+- additiva vitamina c
+- adecur
+- adederme
+- adedois
+- adeforte
+- adeglós
+- adegrip
+- adeks
+- adelle 20
+- adelle 30
+- ademetionina
+- adenocard
+- adenon
+- adenosina
+- adepress
+- aderogil d3
+- aderogil gotas
+- adexil
+- adfen
+- adiloz
+- adinos
+- adinos gen
+- adipept
+- adipina
+- adlyv
+- admelog
+- admenta
+- adnasal
+- adnax
+- adoless
+- adorlan
+- adprex
+- adrecon
+- adren
+- adrenalina
+- adrenoxil
+- adrenyl
+- adriblastina
+- adroxil
+- advantan
+- advate
+- advidine
+- advil
+- advit
+- advnasal
+- adynovate
+- aebol
+- aero-ped
+- aeroclean
+- aerocort s
+- aerodilat
+- aerodini
+- aerodiol
+- aerodivent
+- aeroflux
+- aerofrin
+- aerogold
+- aerogreen
+- aerojet
+- aerolin
+- aeromed
+- aeronax
+- aerotamol
+- aerotide
+- aerotrat
+- aesculus hippocastanum
+- afinitor
+- afolic
+- afolic infantil
+- afopic
+- afrat
+- afrezza
+- afrin
+- afrin saline mist
+- afstyla
+- aftine
+- aftjet
+- aftoderm
+- agalax
+- agamir
+- agarol
+- agarorio
+- agasten
+- agenerase
+- agezag
+- agilisin
+- aginotricin
+- agiofibra
+- agiolax
+- aglicon-soy
+- aglitil
+- aglix
+- aglucose
+- agmelatina
+- agoniada composta farmaervas
+- agoxom
+- agrangio
+- agrastat
+- agregado de albumina
+- agripin
+- agritoss
+- agrylin
+- agua bi-destilada apirogenica
+- agua bidestilada
+- agua boricada 3%
+- agua destilada
+- agua destilada esteril e apirogenica
+- agua inglesa catarinense
+- agua oxigenada 10v
+- agua para injecao
+- agua para injecao madrevita
+- agua para injetaveis
+- agua para injeçao
+- agua para injeção
+- aguardente alemã
+- agud
+- ah-zul
+- ailuk
+- aimafix
+- ainda sr
+- aipri
+- airclin
+- aires
+- aitravic
+- aixa
+- ajovy
+- akalmese
+- akaluret
+- akineton
+- akirol
+- akssus
+- akynzeo
+- alaglu
+- alandre
+- alba 3
+- albel
+- albendazol
+- albendol
+- albendoxil
+- albendrox
+- albendy
+- albenix
+- albentel
+- albenzonil
+- albezin
+- albicon
+- albistin
+- albocresil
+- albumax
+- albumina humana
+- albumina humana 20%
+- albumina humana 20% biotest
+- albumina humana baxter ag
+- albumina humana de origem plasmatica
+- albumina humana de origem plasmatica lfb
+- albumina humana grifols
+- albumina humana hemobrás
+- albumina humana plasmatica
+- albumina sérica humana normal
+- albuminar
+- albunex
+- alburex 20
+- alcachofra
+- alcachofra aspen pharma
+- alcachofra bionatus
+- alcachofra brasmed
+- alcachofra composta
+- alcachofra ec
+- alcachofra flora medicinal
+- alcachofra herbarium
+- alcachofra herald's
+- alcachofra milian
+- alcachofra multilab
+- alcachofra natulab
+- alcachofra orient
+- alcachofra pura cronin
+- alcachofra simões
+- alcachofra tks
+- alcachofra vidora
+- alcachofra vitamed
+- alcachofra yanten
+- alcachofrax
+- alcachol
+- alcachoyan
+- alcaflor
+- alcaflor uno
+- alcagest
+- alcaherb
+- alcalergin
+- alcalis gel
+- alcalone plus
+- alcanatan
+- alcatoss xarope
+- alcaçuz flora medicinal
+- alcolstop
+- alcool iodado 0,1%
+- alcytam
+- aldactone
+- aldara
+- aldaril
+- aldazida
+- aldijet
+- aldomet
+- aldopa
+- aldosterin
+- aldotil
+- aldrox max
+- aldurazyme
+- aledex
+- alektos
+- alektos ped
+- alendil
+- alendil cálcio d
+- alendosseo
+- alendrin
+- alendronato de sodio
+- alendronato sodico
+- alendrus
+- alendósseo
+- alene
+- alenost
+- alenthus xr
+- aleradina
+- alerdryl -d
+- alerfin
+- alergaliv
+- alergaliv d
+- alergcortem
+- alergiderm
+- alergidex
+- alerginyl
+- alergitanil
+- alergo filinal
+- alergolon
+- alergomine
+- alergonil
+- alergosan
+- alergyo
+- alerid
+- alerjon
+- alermine
+- alersin
+- alesse
+- aletir
+- aleve
+- alevo
+- alexa
+- alexan
+- alfad
+- alfaepoetina
+- alfaestradiol
+- alfainterferona 2a
+- alfainterferona 2b
+- alfametidopa
+- alfasin
+- alfast
+- alfron
+- alfusina
+- alfuzosina
+- alfuzosina cloridrato
+- algexin
+- algi dorserol
+- algi tanderil
+- algi-reumatril
+- algicod
+- algie
+- algifenaco
+- algiflanil
+- algiflex
+- algilive
+- algiren
+- algirona
+- algoyect
+- algy-flanderil
+- algyseda
+- alho luper
+- alib
+- amoxicilina
+- arnica montana
+- arnica montana l.
+- atenolol
+- brentuximabe vedotina
+- brometo de ipratrópio
+- carbômer 940
+- carmelose sódica
+- cinchona calisaya wedd.
+- citrato de sildenafila
+- cloridrato de alfentanila monoidratada
+- clotrimazol
+- colecalciferol
+- cordia verbenacea dc.
+- cynara scolymus l.
+- desonida
+- dienogeste
+- dipropionato de beclometasona
+- eritropoetina humana recombinante
+- eucalyptus globulus labill.
+- fremanezumabe
+- hedera helix l.
+- hypericum perforatum
+- hypericum perforatum l
+- indapamida
+- insulina humana
+- insulina lispro
+- iodeto de potassio
+- levofloxacino hemiidratado
+- lisinato de cetoprofeno
+- matricaria recutita l.
+- passiflora incarnata l.
+- perindopril arginina
+- peróxido de uréia
+- policresuleno
+- risedronato sódico
+- rivaroxabana
+- senna alexandrina mill.
+- sulfato de amicacina
+- sulfato de salbutamol
+- sulfato de salbutamol micronizado
+- trometamol cetorolaco
+- vacina contra caxumba
+- vacina contra rubeola
+- vacina contra sarampo
+- água para injetáveis
+- ácido zoledrônico monoidratado

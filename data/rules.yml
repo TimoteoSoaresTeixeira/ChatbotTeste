@@ -1,11 +1,16 @@
 version: "3.1"
 
 rules:
-- rule: Explicar a função de um remédio quando perguntado
-  # Esta é a regra principal para a apresentação.
+
+# --- REGRA PRINCIPAL ---
+# Esta regra cobre todos os casos da intenção 'perguntar_funcao_remedio',
+# incluindo quando o utilizador digita apenas o nome do remédio (graças ao treino no nlu.yml).
+- rule: Explicar a função de um remédio
   steps:
   - intent: perguntar_funcao_remedio
   - action: action_explicar_remedio
+
+# --- REGRAS DE CONVERSAÇÃO GERAL ---
 
 - rule: Dizer olá
   steps:
