@@ -1,0 +1,31 @@
+Terminal 1:
+
+.venv\Scripts\activate
+
+rasa train
+
+
+
+depois dois terminais:
+terminal 1:
+rasa run actions
+
+terminal 2:
+.venv\Scripts\activate
+rasa shell
+
+
+
+Depuração (Quando as coisas correm mal)
+
+Este comando é o que usámos para corrigir o bot passo a passo. É extremamente útil para encontrar erros de lógica na conversa.
+
+Pré-requisitos:
+
+Estar na pasta do projeto.
+
+Ter o ambiente virtual ativado.
+
+Comando:
+
+rasa interactive
