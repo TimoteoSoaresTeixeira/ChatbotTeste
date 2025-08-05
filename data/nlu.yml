@@ -6,96 +6,50 @@ nlu:
     - oi
     - olá
     - bom dia
-    - boa tarde
-    - boa noite
 
 - intent: despedida
   examples: |
     - tchau
     - adeus
-    - até logo
 
 - intent: agradecer
   examples: |
     - obrigado
     - valeu
-    - muito obrigado
 
 - intent: sobre_vitalog
   examples: |
     - o que é o vitalog?
     - me fale sobre o projeto
-    - qual o objetivo deste bot?
-
-- intent: affirm
-  examples: |
-    - sim
-    - isso
-    - com certeza
-
-- intent: deny
-  examples: |
-    - não
-    - de jeito nenhum
-    - nem pensar
 
 - intent: bot_challenge
   examples: |
     - você é um robô?
-    - você é um bot?
     - quem é você?
-
-- intent: informar_remedio
-  examples: |
-    - o nome é [dipirona](remedio)
-    - é [AAS](remedio)
-    - [paracetamol](remedio)
 
 - intent: perguntar_funcao_remedio
   examples: |
-    - [dipirona](remedio)
+    - para que serve [dipirona](remedio)
+    - me fale sobre [paracetamol](remedio)
     - o que é [aas](remedio)?
-    - para que serve [paracetamol](remedio)
-    - me fale sobre [ibuprofeno](remedio)
-    - explique [losartana](remedio)
     - [desloratadina](remedio)
     - qual a função de [omeprazol](remedio)?
-    - [clonazepam](remedio) serve para quê?
-    - o que é [cloreto de sódio](remedio)?
     - me explique o que é [desloratadina](remedio)
     - para que serve o [ácido mefenâmico](remedio)
-    - me fale sobre o [cloridrato de fexofenadina](remedio)
-    - qual a indicação de [ácido acetilsalicílico](remedio)
-    - explique o [cloridrato de ciclobenzaprina](remedio)
-    - [estearato de eritromicina](remedio)
-    - o que o [cloridrato de propranolol](remedio) faz?
-    - [ácido fólico](remedio)
-    - para que serve o [cloridrato de fexofenadina](remedio)
-    - me fale sobre o [cloridrato de fexofenadina](remedio)
-    - o que é [cloridrato de fexofenadina](remedio)?
-    - me explica o [ácido mefanâmico](remedio)
-    - qual a função do [ácido acetilsalicílico](remedio)
-    - [ácido acetilsalicílico](remedio)
-    - [cloridrato de fexofenadina](remedio)
-    - [ácido mefanâmico](remedio)
-    - para que serve [losartana potássica](remedio)
-    - o que faz a [amoxicilina + clavulanato de potássio](remedio)
-    # --- NOVOS EXEMPLOS PARA ROBUSTEZ ---
-    - qual a função do [cloridrato de proparacaína](remedio)
-    - o que é [cloridrato de proparacaína](remedio)
-    - me fale sobre [cloridrato de proparacaína](remedio)
-    - [cloridrato de proparacaína](remedio)
-    - para que serve o [cloridrato de tansulosina](remedio)
-    - explique [cloridrato de metformina](remedio)
-    - o que faz o [cloridrato de petidina](remedio)?
-    - [cloridrato de ondansetrona](remedio)
+    - o que é [acerogrip c](remedio)
+    - me fale sobre [acerogrip c](remedio)
+    - [acerogrip c](remedio)
 
-
-- intent: cancelar
+- intent: chitchat
   examples: |
-    - cancelar
-    - deixa pra lá
-    - não quero mais
+    - silencio
+    - para
+    - pare
+    - ok
+    - entendi
+    - legal
+    - sim
+    - não
 
 - lookup: remedio
   examples: |

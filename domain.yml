@@ -1,85 +1,41 @@
 version: "3.1"
 
 intents:
-- saudacao
-- despedida
-- agradecer
-- sobre_vitalog
-- affirm
-- deny
-- bot_challenge
-- adicionar_remedio
-- informar_remedio
-- listar_remedios
-- verificar_interacoes
-- perguntar_funcao_remedio
-- cancelar
+  - saudacao
+  - despedida
+  - agradecer
+  - sobre_vitalog
+  - bot_challenge
+  - perguntar_funcao_remedio
+  - chitchat
 
 entities:
-- remedio
-
-slots:
-  remedios_list:
-    type: list
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: remedio
+  - remedio
 
 responses:
   utter_saudacao:
-  - text: "Olá! Eu sou o VitaLog, seu assistente de medicação. Estou aqui para te ajudar a entender e gerir os seus remédios. Como posso ser útil hoje?"
-  - text: "Oi, tudo bem? Eu sou o VitaLog, seu assistente virtual de saúde. Em que posso te ajudar agora?"
-
+    - text: "Olá! Eu sou o VitaLog. Minha função é explicar para que servem os medicamentos. Como posso ajudar?"
+  
   utter_despedida:
-  - text: "Até logo! Se cuida e qualquer coisa, é só me chamar."
-  - text: "Tudo bem! Estou encerrando por aqui. Se precisar de mais alguma coisa, sabe onde me encontrar. Até mais!"
-
-  utter_remedio_adicionado:
-  - text: "Prontinho, anotei {remedio} na sua lista. Quer fazer mais alguma coisa?"
-  - text: "Ok, {remedio} foi adicionado com sucesso! Posso te ajudar com mais algum remédio?"
-
-  utter_remedio_ja_adicionado:
-  - text: "Opa, parece que o {remedio} já está na sua lista. Quer tentar outro?"
-
+    - text: "Até logo! Se precisar de mais alguma informação, é só perguntar."
+  
   utter_remedio_nao_identificado:
-  - text: "Hum, não consegui entender o nome do remédio. Você poderia, por favor, repetir ou verificar se o nome está escrito corretamente?"
-
-  utter_remedio_nao_existe:
-  - text: "Eu procurei aqui na minha base de dados, mas não encontrei o medicamento '{remedio}'. Será que o nome está certinho?"
-
+    - text: "Hum, não consegui entender o nome do remédio. Você poderia, por favor, repetir ou verificar se o nome está escrito corretamente?"
+  
   utter_explicacao_nao_encontrada:
-  - text: "Puxa, eu ainda não tenho a explicação para o '{remedio}'. Estou sempre a aprender, mas essa informação eu vou ficar a dever por enquanto, mas se o remedio realmente existe verifique se o escreveu corretamente"
-
-  utter_lista_vazia:
-  - text: "A sua lista de medicamentos está vazia no momento. Quer adicionar o primeiro?"
-
-  utter_listar_remedios:
-  - text: "Claro! Esta é a sua lista de medicamentos atual:\n{lista_remedios}"
-
-  utter_interacao_lista_insuficiente:
-  - text: "Para eu conseguir verificar as interações, preciso que você tenha pelo menos dois medicamentos na lista."
-
-  utter_sem_interacoes:
-  - text: "Dei uma olhada aqui e não encontrei nenhuma interação de risco entre os seus medicamentos. Mas lembre-se, esta é apenas uma ajuda, consulte sempre o seu médico!"
-
-  utter_interacoes_encontradas:
-  - text: "Atenção! Encontrei as seguintes interações que podem ser arriscadas. É muito importante que você converse com o seu médico sobre isso:\n{interacoes}"
-
-  utter_ask_remedio:
-  - text: "Com certeza! Qual o nome do medicamento que você gostaria de adicionar?"
-
+    - text: "Puxa, eu ainda não tenho a explicação para o '{remedio}'. Verifique se o nome está escrito corretamente."
+  
   utter_sou_um_bot:
-  - text: "Eu sou o VitaLog, um assistente virtual criado para ser o seu parceiro na gestão de medicamentos. Fui desenvolvido para tornar o seu tratamento mais seguro e fácil de entender!"
-
+    - text: "Eu sou o VitaLog, um assistente virtual focado em fornecer informações sobre medicamentos."
+  
   utter_sobre_vitalog:
-  - text: "O VitaLog é uma plataforma de saúde inteligente. A minha missão é te ajudar a controlar os seus remédios, evitar interações perigosas e entender para que serve cada um deles. Pense em mim como o seu farmacêutico de bolso!"
+    - text: "O VitaLog é um assistente de medicação inteligente. A minha missão é te ajudar a entender para que serve cada remédio."
+
+  utter_chitchat:
+    - text: "Entendido. Lembre-se que minha função é dar informações sobre remédios. Como posso te ajudar com algum medicamento?"
 
 actions:
-- action_adicionar_remedio
-- action_listar_remedios
-- action_verificar_interacoes
-- action_explicar_remedio
+  - action_explicar_remedio
 
 session_config:
   session_expiration_time: 60

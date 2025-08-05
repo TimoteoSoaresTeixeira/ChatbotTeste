@@ -30,3 +30,8 @@ rules:
   steps:
   - intent: agradecer
   - action: utter_despedida
+
+- rule: Lidar com conversas curtas
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
