@@ -13,7 +13,6 @@ intents:
 - listar_remedios
 - verificar_interacoes
 - perguntar_funcao_remedio
-- resetar_lista
 - cancelar
 
 entities:
@@ -80,7 +79,6 @@ actions:
 - action_adicionar_remedio
 - action_listar_remedios
 - action_verificar_interacoes
-- action_resetar_lista
 - action_explicar_remedio
 
 session_config:

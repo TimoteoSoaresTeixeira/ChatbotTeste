@@ -1,16 +1,10 @@
 version: "3.1"
 
 rules:
-
-# --- REGRA PRINCIPAL ---
-# Esta regra cobre todos os casos da intenção 'perguntar_funcao_remedio',
-# incluindo quando o utilizador digita apenas o nome do remédio (graças ao treino no nlu.yml).
 - rule: Explicar a função de um remédio
   steps:
   - intent: perguntar_funcao_remedio
   - action: action_explicar_remedio
-
-# --- REGRAS DE CONVERSAÇÃO GERAL ---
 
 - rule: Dizer olá
   steps:
@@ -35,16 +29,4 @@ rules:
 - rule: Lidar com agradecimento
   steps:
   - intent: agradecer
-  - action: utter_despedida
-
-- rule: Lidar com cancelamento
-  steps:
-  - intent: cancelar
-  - action: utter_despedida
-
-- rule: Lidar com negação a uma pergunta
-  condition:
-  - active_loop: null
-  steps:
-  - intent: deny
   - action: utter_despedida
