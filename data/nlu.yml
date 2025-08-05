@@ -6,25 +6,31 @@ nlu:
     - oi
     - olá
     - bom dia
+    - boa tarde
+    - boa noite
 
 - intent: despedida
   examples: |
     - tchau
     - adeus
+    - até mais
 
 - intent: agradecer
   examples: |
     - obrigado
     - valeu
+    - muito obrigado
 
 - intent: sobre_vitalog
   examples: |
     - o que é o vitalog?
     - me fale sobre o projeto
+    - qual o objetivo deste bot?
 
 - intent: bot_challenge
   examples: |
     - você é um robô?
+    - você é um bot?
     - quem é você?
 
 - intent: perguntar_funcao_remedio
@@ -39,6 +45,9 @@ nlu:
     - o que é [acerogrip c](remedio)
     - me fale sobre [acerogrip c](remedio)
     - [acerogrip c](remedio)
+    - o que é [abobora d'anta](remedio)
+    - me fale sobre [abobora d'anta](remedio)
+    - [abobora d'anta](remedio)
 
 - intent: chitchat
   examples: |
