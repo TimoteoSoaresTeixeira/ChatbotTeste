@@ -6,38 +6,39 @@ language: pt
 
 # Configuração do pipeline de NLU (Entendimento de Linguagem Natural)
 pipeline:
-  - name: WhitespaceTokenizer
-  - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
-  - name: CountVectorsFeaturizer
-  - name: CountVectorsFeaturizer
-    analyzer: char_wb
-    min_ngram: 1
-    max_ngram: 4
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
   # DIETClassifier é o cérebro do NLU. Otimizado para baixo uso de memória.
-  - name: DIETClassifier
-    epochs: 40                  # Reduzido para 40 para um modelo menor.
-    batch_size: [64, 128]       # Usa lotes menores para economizar RAM.
-    hidden_layers_sizes:
-      text: [128]               # Camada de processamento de texto simplificada.
-    constrain_similarities: true
-  - name: EntitySynonymMapper
-  - name: ResponseSelector
-    epochs: 40                  # Reduzido para 40.
-    constrain_similarities: true
+- name: DIETClassifier
+  epochs: 40                    # Reduzido para 40 para um modelo menor.
+  batch_size: [64, 128]         # Usa lotes menores para economizar RAM.
+  hidden_layers_sizes:
+    text: [128]                 # Camada de processamento de texto simplificada.
+  constrain_similarities: true
+- name: EntitySynonymMapper
+- name: ResponseSelector
+  epochs: 40                    # Reduzido para 40.
+  constrain_similarities: true
 
 # Configuração das Policies (Gerenciamento de Diálogo)
 policies:
-  - name: MemoizationPolicy
-  - name: RulePolicy
+- name: MemoizationPolicy
+- name: RulePolicy
   # TEDPolicy é o cérebro do diálogo. Otimizado para baixo uso de memória.
-  - name: UnexpecTEDIntentPolicy
-    max_history: 5
-    epochs: 40 # Reduzido para 40.
-  - name: TEDPolicy
-    max_history: 5
-    epochs: 40 # Reduzido para 40.
-    batch_size: [64, 128]       # Usa lotes menores para economizar RAM.
-    hidden_layers_sizes:
-      dialogue: [128]           # Camada de processamento de diálogo simplificada.
-    constrain_similarities: true
+- name: UnexpecTEDIntentPolicy
+  max_history: 5
+  epochs: 40   # Reduzido para 40.
+- name: TEDPolicy
+  max_history: 5
+  epochs: 40   # Reduzido para 40.
+  batch_size: [64, 128]         # Usa lotes menores para economizar RAM.
+  hidden_layers_sizes:
+    dialogue: [128]             # Camada de processamento de diálogo simplificada.
+  constrain_similarities: true
+assistant_id: 20250806-115548-aquamarine-transform
