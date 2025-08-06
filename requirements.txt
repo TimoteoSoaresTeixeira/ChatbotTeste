@@ -94,14 +94,12 @@ PyJWT==2.9.0
 pykwalify==1.8.0
 pymongo==4.3.3
 pyparsing==3.1.4
-pyreadline3==3.5.4
 pyrsistent==0.20.0
 python-crfsuite==0.9.11
 python-dateutil==2.8.2
 python-engineio==4.12.2
 python-socketio==5.13.0
 pytz==2022.7.1
-pywin32==311
 PyYAML==6.0.2
 questionary==1.10.0
 randomname==0.1.5
