@@ -1,50 +1,43 @@
-# The config recipe.
-# https://rasa.com/docs/rasa/model-configuration/
-recipe: default.v1
+# config.yml
+# Versão ultra-leve para ambientes com memória muito restrita.
 
-# The assistant project unique identifier
-# This default value must be replaced with a unique assistant name within your deployment
-assistant_id: 20250731-153617-ambitious-pseudonym
+# Define a língua do seu assistente.
+language: pt
 
-# Configuration for Rasa NLU.
-# https://rasa.com/docs/rasa/nlu/components/
-language: en
+# Configuração do pipeline de NLU (Entendimento de Linguagem Natural)
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  # DIETClassifier é o cérebro do NLU. Otimizado para baixo uso de memória.
+  - name: DIETClassifier
+    epochs: 40                  # Reduzido para 40 para um modelo menor.
+    batch_size: [64, 128]       # Usa lotes menores para economizar RAM.
+    hidden_layers_sizes:
+      text: [128]               # Camada de processamento de texto simplificada.
+    constrain_similarities: true
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 40                  # Reduzido para 40.
+    constrain_similarities: true
 
-pipeline: null
-# # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
-# # If you'd like to customize it, uncomment and adjust the pipeline.
-# # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-#   - name: WhitespaceTokenizer
-#   - name: RegexFeaturizer
-#   - name: LexicalSyntacticFeaturizer
-#   - name: CountVectorsFeaturizer
-#   - name: CountVectorsFeaturizer
-#     analyzer: char_wb
-#     min_ngram: 1
-#     max_ngram: 4
-#   - name: DIETClassifier
-#     epochs: 100
-#     constrain_similarities: true
-#   - name: EntitySynonymMapper
-#   - name: ResponseSelector
-#     epochs: 100
-#     constrain_similarities: true
-#   - name: FallbackClassifier
-#     threshold: 0.3
-#     ambiguity_threshold: 0.1
-
-# Configuration for Rasa Core.
-# https://rasa.com/docs/rasa/core/policies/
-policies: null
-# # No configuration for policies was provided. The following default policies were used to train your model.
-# # If you'd like to customize them, uncomment and adjust the policies.
-# # See https://rasa.com/docs/rasa/policies for more information.
-#   - name: MemoizationPolicy
-#   - name: RulePolicy
-#   - name: UnexpecTEDIntentPolicy
-#     max_history: 5
-#     epochs: 100
-#   - name: TEDPolicy
-#     max_history: 5
-#     epochs: 100
-#     constrain_similarities: true
+# Configuração das Policies (Gerenciamento de Diálogo)
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  # TEDPolicy é o cérebro do diálogo. Otimizado para baixo uso de memória.
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 40 # Reduzido para 40.
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 40 # Reduzido para 40.
+    batch_size: [64, 128]       # Usa lotes menores para economizar RAM.
+    hidden_layers_sizes:
+      dialogue: [128]           # Camada de processamento de diálogo simplificada.
+    constrain_similarities: true
