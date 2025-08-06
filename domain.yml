@@ -15,25 +15,19 @@ entities:
 responses:
   utter_saudacao:
     - text: "Olá! Eu sou o VitaLog. Minha função é explicar de forma simples para que servem os medicamentos. Como posso ajudar?"
-  
   utter_despedida:
-    - text: "Até logo! Se precisar de mais alguma informação, é só perguntar."
-  
+    - text: "Até logo! Se precisar de mais alguma informação, é só perguntar."  
   utter_remedio_nao_identificado:
-    - text: "Hum, não consegui entender o nome do remédio. Você poderia, por favor, repetir ou verificar se o nome está escrito corretamente?"
-  
+    - text: "Hum, não consegui entender o nome do remédio. Você poderia, por favor, repetir ou verificar se o nome está escrito corretamente?"  
   utter_explicacao_nao_encontrada:
-    - text: "Puxa, eu ainda não tenho a explicação para o '{remedio}'. Verifique se o nome está escrito corretamente."
-  
+    - text: "Puxa, eu ainda não tenho a explicação para o '{remedio}'. Verifique se o nome está escrito corretamente."  
   utter_sou_um_bot:
-    - text: "Eu sou o VitaLog, um assistente virtual focado em fornecer informações sobre medicamentos. Meu papel é informar para que serve cada remédio, mas lembre-se: esta é apenas uma ajuda. É fundamental que você procure um médico ou farmacêutico de confiança, pois eles conhecem o seu caso e o motivo de terem receitado este medicamento."
-  
+    - text: "Eu sou o VitaLog, um assistente virtual focado em fornecer informações sobre medicamentos. Meu papel é informar para que serve cada remédio, mas lembre-se: esta é apenas uma ajuda. É fundamental que você procure um médico ou farmacêutico de confiança, pois eles conhecem o seu caso e o motivo de terem receitado este medicamento."  
   utter_sobre_vitalog:
     - text: "O VitaLog é um assistente de medicação inteligente. A minha missão é te ajudar a entender, de forma rápida e simples, para que serve cada um dos seus remédios."
-
   utter_chitchat:
     - text: "Entendido. Lembre-se que minha função é dar informações básicas sobre medicamentos. Para casos complexos ou para o seu tratamento específico, é sempre melhor procurar um médico. Sobre qual outro remédio você gostaria de saber?"
-
+    
 actions:
   - action_explicar_remedio
 

@@ -48,6 +48,7 @@ nlu:
     - o que é [abobora d'anta](remedio)
     - me fale sobre [abobora d'anta](remedio)
     - [abobora d'anta](remedio)
+    - o que é [aerodilat](remedio)
 
 - intent: chitchat
   examples: |
